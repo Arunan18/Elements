@@ -177,6 +177,8 @@ public class MandatoryFieldTest extends DriverInitialization{
 //		Click Cancel
 		driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div[3]/button[1]")).click();
 
+//		Thread.sleep(3000);
+		
 		testSpaceValidation();
 		testMinCharValidations();
 		testEmptyValid();
@@ -194,8 +196,7 @@ public class MandatoryFieldTest extends DriverInitialization{
 
 //	@Test(priority = 1)
 	public static void testSpaceValidation() throws InterruptedException {
-		driver.findElement(By.xpath("//a[@class='sc-bdVaJa ieeiNp'][@href='#/master/equipmentlevel']")).click();
-		Thread.sleep(4000);
+
 		// Click Add Equipment
 		try {
 			driver.findElement(By.xpath(

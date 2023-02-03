@@ -8,9 +8,19 @@
 			<class name="TestCases.MasterTest" />
 			<class name="TestCases.MandatoryFieldTest" />
 			<class name="TestCases.MaterialTest" />
-			<!--<class name="TestCases.Dropdown" />
+			<class name="TestCases.Dropdown" />
 			<class name="TestCases.IconTest" />
-			<class name="TestCases.UnitTest1" /> -->
+			<class name="TestCases.UnitTest1" />
+			<class name="TestCases.HomeTest" />
+			<class name="TestCases.Check_boxtest" />
+			<class name="TestCases.TogglebuttonTest" />
+			<class name="TestCases.HomeTest" />
+			<class name="TestCases.RadioButtonsTest" />
+			
+			
+			<!--
+			 
+			<class name="TestCases.MandatoryFieldTest" />-->
 		
 		</classes>
 	</test> <!-- Test -->
