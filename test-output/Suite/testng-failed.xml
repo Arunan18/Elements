@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Radio(failed)">
+    <classes>
+      <class name="TestCases.ForgotLinkTest">
+        <methods>
+          <include name="closeChrome"/>
+          <include name="main"/>
+          <include name="ForgetLink"/>
+        </methods>
+      </class> <!-- TestCases.ForgotLinkTest -->
+      <class name="TestCases.IconTest">
+        <methods>
+          <include name="closeChrome"/>
+          <include name="mainn"/>
+          <include name="main"/>
+        </methods>
+      </class> <!-- TestCases.IconTest -->
+      <class name="TestCases.MaterialTest">
+        <methods>
+          <include name="Login"/>
+          <include name="closeChrome"/>
+          <include name="main"/>
+        </methods>
+      </class> <!-- TestCases.MaterialTest -->
+      <class name="TestCases.UnitTest1">
+        <methods>
+          <include name="closeChrome"/>
+          <include name="main"/>
+          <include name="Unit"/>
+        </methods>
+      </class> <!-- TestCases.UnitTest1 -->
+      <class name="TestCases.Dropdown">
+        <methods>
+          <include name="closeChrome"/>
+          <include name="main"/>
+          <include name="MaterialDropDown"/>
+        </methods>
+      </class> <!-- TestCases.Dropdown -->
+      <class name="TestCases.LoginTest">
+        <methods>
+          <include name="closeChrome"/>
+          <include name="Login"/>
+          <include name="main"/>
+        </methods>
+      </class> <!-- TestCases.LoginTest -->
+      <class name="TestCases.MasterTest">
+        <methods>
+          <include name="closeChrome"/>
+          <include name="Login"/>
+          <include name="main"/>
+        </methods>
+      </class> <!-- TestCases.MasterTest -->
+    </classes>
+  </test> <!-- Radio(failed) -->
+</suite> <!-- Failed suite [Suite] -->
