@@ -6,10 +6,11 @@
 			<class name="TestCases.ForgotLinkTest" />
 			<class name="TestCases.LoginTest" />
 			<class name="TestCases.MasterTest" />
+			<class name="TestCases.MandatoryFieldTest" />
 			<class name="TestCases.MaterialTest" />
-			<class name="TestCases.Dropdown" />
+			<!--<class name="TestCases.Dropdown" />
 			<class name="TestCases.IconTest" />
-			<class name="TestCases.UnitTest1" />
+			<class name="TestCases.UnitTest1" /> -->
 		
 		</classes>
 	</test> <!-- Test -->

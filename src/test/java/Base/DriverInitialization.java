@@ -20,7 +20,7 @@ public class DriverInitialization {
 	
 	public static String browser ="chrome";
 	public static WebDriver driver;
-	public static String URL = "http://192.168.1.35:3001";
+	public static String URL = "http://192.168.1.35:8083";
 	
 	public static ExtentReports extent;
 	public static ExtentHtmlReporter htmlreporter;
