@@ -1,6 +1,9 @@
 package TestCases;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.Point;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.AssertJUnit;
@@ -222,7 +225,40 @@ public class TogglebuttonTest  extends DriverInitialization{
 							          testCase.log(Status.INFO, "Expected Button Visible :- " + ExpectedInternalRadioEnable);
 							          testCase.log(Status.FAIL, "Button Visible is Wrong");
 							      }
-							      
-						Thread.sleep(2000);	     							    
+////							      ******************toggle switch function confirm****************
+//
+//									try {
+//										TogglebuttonPage.Duedaytoggle.click();
+//										String beforeClickBgColor = TogglebuttonPage.Duedaytoggle.getCssValue("background-color");
+//										TogglebuttonPage.Duedaytoggle.click();
+//										String afterClickBgColor = TogglebuttonPage.Duedaytoggle
+//												.getCssValue("background-color");
+//										boolean highlight = true;
+//										testCase = extent.createTest("highlight");
+//										try {
+//											AssertJUnit.assertEquals(beforeClickBgColor, afterClickBgColor);
+//										} catch (AssertionError e) {
+//											highlight = false;
+//										}
+//
+//										if (!beforeClickBgColor.equals(afterClickBgColor)) {
+////							                                              testCase.log(Status.INFO, "ActualElement :- " + beforeClickBgColor);
+////							                                                 testCase.log(Status.INFO, "ExpectedElement :- " + afterClickBgColor);
+//											testCase.log(Status.INFO, "correct backgroundColor");
+//											testCase.log(Status.PASS, "Correct ");
+//											// System.out.println("Highlight is working properly");
+//										} else {
+////							                                              testCase.log(Status.INFO, "ActualAlignment :- " + beforeClickBgColor);
+////							                                                 testCase.log(Status.INFO, "ExpectedAlignment :- " + afterClickBgColor);
+//											testCase.log(Status.INFO, "Element not available");
+//											testCase.log(Status.FAIL, "fail");
+//											// System.out.println("Highlight is not working");
+//										}
+//									} catch (NoSuchElementException e) {
+//										testCase = extent.createTest("Locator");
+//										testCase.log(Status.INFO, "Element not available");
+//										testCase.log(Status.FAIL, "No Element");
+//									}
+						
 		}
 }

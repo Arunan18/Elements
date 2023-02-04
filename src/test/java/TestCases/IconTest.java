@@ -191,6 +191,16 @@ public class IconTest extends DriverInitialization{
 					
 					testCase.log(Status.FAIL, "wrong");
 				}
+			
+			boolean ActualIconEnable=IconPage.IMG.isEnabled();
+			boolean ExpectedIconEnable=true;
+			testCase = extent.createTest("Icon -Enable");
+			try {
+				
+			} catch (AssertionError e) {
+				// TODO: handle exception
+			}
+			
 	/*End width & height*/	
 	
 }	

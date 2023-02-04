@@ -3,6 +3,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 
@@ -10,6 +11,7 @@ import com.aventstack.extentreports.Status;
 
 import Base.DriverInitialization;
 import Pages.Checkbox_page;
+import Pages.UnitPage;
 
 import java.io.IOException;
 
@@ -363,6 +365,21 @@ import java.io.IOException;
 			}
 			 Thread.sleep(2000);
 			//*****************cursor end*******************	
+			 
+//			 padding
+			String Actualpadding = Checkbox_page.checkboxvisible.getCssValue("padding");
+	        String Expectedpadding = "0px";
+	        testCase = extent.createTest("CHECKBOX-Padding");
+	        try {
+	            Assert.assertEquals(Actualpadding, Expectedpadding);
+	            testCase.log(Status.INFO, "Actual padding :- " + Actualpadding);
+				testCase.log(Status.INFO, "Expected padding :- " + Expectedpadding);
+				testCase.log(Status.PASS, "padding is Correct");
+			} catch (AssertionError e) {
+				testCase.log(Status.INFO, "Actual padding :- " + Actualpadding);
+				testCase.log(Status.INFO, "Expected padding :- " + Expectedpadding);
+				testCase.log(Status.FAIL, "padding is Wrong");
+	        }
 			//*****************position start*******************	
 			 
 			 try {

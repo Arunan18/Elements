@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class MaterilaPage {
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/section/section/header/ul/li[3]/span/a")
+	@FindBy(xpath = "//a[@class='sc-bdVaJa ieeiNp'][@href='#/master/materiallevel']")
 	public static WebElement Material;
 
 }

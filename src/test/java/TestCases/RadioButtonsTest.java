@@ -478,7 +478,7 @@ RadioButtonsPage rbp= new RadioButtonsPage();
 //		Check internal border colour 
 		String InternalBorderColour = RadioButtonsPage.InternalRadioButton.getCssValue("border-color");
 		String ActualinternalBorderColour = Color.fromString(InternalBorderColour).asHex();
-		String ExpectedinternalBorderColour = "#000000";
+		String ExpectedinternalBorderColour = "#1890ff";
 		testCase = extent.createTest("INTERNAL-BORDER-COLOUR");
 		try {
 			Assert.assertEquals(ActualinternalBorderColour, ExpectedinternalBorderColour);
@@ -492,6 +492,24 @@ RadioButtonsPage rbp= new RadioButtonsPage();
 			testCase.log(Status.FAIL, "wrong border Colour");
 		}
 
+//		background color
+		String bgcolor = RadioButtonsPage.InternalRadioButton.getCssValue("background-color");
+		String Actualbgcolor = Color.fromString(bgcolor).asHex();
+        String Expectedbgcolor = "#000000";
+
+        testCase = extent.createTest("RADIO BUTTON BACKGROUND COLOR");
+        try {
+            Assert.assertEquals(Actualbgcolor, Expectedbgcolor);
+            testCase.log(Status.INFO, "Actual background color :- " + Actualbgcolor);
+            testCase.log(Status.INFO, "Expected background color :- " + Expectedbgcolor);
+            testCase.log(Status.PASS, " background color Correct ");
+        } catch (AssertionError e) {
+            testCase.log(Status.INFO, "Actual background color :- " + Actualbgcolor);
+            testCase.log(Status.INFO, "Expected background color :- " + Expectedbgcolor);    
+            testCase.log(Status.FAIL, " background color wrong");
+        }
+		RadioButtonsPage.Cancel.click();
+		Thread.sleep(2000);
 		
 	}
 }

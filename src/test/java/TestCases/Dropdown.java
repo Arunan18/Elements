@@ -33,9 +33,9 @@ public class Dropdown extends DriverInitialization {
 //		WebElement Meterial = driver.findElement(
 //				By.xpath("//li[@class='ant-menu-overflow-item ant-menu-item ant-menu-item-only-child'][3]"));
 //		Meterial.click();
-
+Thread.sleep(1000);
 		WebElement AddMeterialMainCategoryButton = driver.findElement(By.xpath(
-				"//*[@id=\"root\"]/div/section/section/main/div/div/div[2]/div/div/div/div/div/div[1]/div/div[3]/button/span"));
+				"//button[@type='button'][@class='ant-btn sc-gZMcBi dMdnOw']"));
 		AddMeterialMainCategoryButton.click();
 
 		WebElement dropdown = driver.findElement(By.xpath("//input[@id='mainType']"));

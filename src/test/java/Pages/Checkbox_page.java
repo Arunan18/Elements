@@ -14,7 +14,7 @@ public class Checkbox_page {
 	@FindBy(xpath = "//button[@type]")
 	public static WebElement login;
 	
-	@FindBy(xpath = "/html/body/div[1]/div/section/section/main/div/div/div/div[2]/a/div/div")
+	@FindBy(xpath = "//a[@class='sc-bdVaJa ieeiNp'][@href='#/testcreate']")
 	public static WebElement testConfiguration;
 	
 	

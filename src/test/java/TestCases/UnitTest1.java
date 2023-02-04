@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 
 import Base.DriverInitialization;
+import Pages.ImagePage;
 import Pages.RadioButtonsPage;
 import Pages.UnitPage;
 
@@ -22,8 +23,11 @@ public class UnitTest1 extends DriverInitialization {
 		PageFactory.initElements(driver, up);
 		UnitPage.Unit.click();
 		Thread.sleep(2000);
-
+		testCase = extent.createTest("ADD UNIT-DONT HAVE LOCATER");
 		try {
+			testCase.log(Status.INFO, "Locator Available");
+			testCase.log(Status.PASS, "Locator Available");
+			
 			if (UnitPage.AddUnit.isDisplayed()) {
 //				Check Button Displayed or not
 				boolean ExpectedButtonVisible = true;
@@ -51,15 +55,15 @@ public class UnitTest1 extends DriverInitialization {
 					Thread.sleep(1000);
 					Assert.assertEquals(actualButtonEnable, ExpectedButtonEnable);
 					Thread.sleep(3000);
-					testCase.log(Status.INFO, "ActualfontsSize :- " + actualButtonEnable);
-					testCase.log(Status.INFO, "ExpectedfontsSize :- " + ExpectedButtonEnable);
-					testCase.log(Status.INFO, "Correct font-size");
-					testCase.log(Status.PASS, "Font-size Correct");
+					testCase.log(Status.INFO, "Actual Button Enable :- " + actualButtonEnable);
+					testCase.log(Status.INFO, "Expected Button Enable :- " + ExpectedButtonEnable);
+					testCase.log(Status.INFO, "Correct  Button Enable");
+					testCase.log(Status.PASS, " Button Enable Correct");
 				} catch (AssertionError e) {
-					testCase.log(Status.INFO, "ActualfontsSize :- " + actualButtonEnable);
-					testCase.log(Status.INFO, "ExpectedfontsSize :- " + ExpectedButtonEnable);
-					testCase.log(Status.INFO, "Wrong font-size");
-					testCase.log(Status.FAIL, "Font-size Wrong");
+					testCase.log(Status.INFO, "Actual Button Enable :- " + actualButtonEnable);
+					testCase.log(Status.INFO, "Expected Button Enable :- " + ExpectedButtonEnable);
+					testCase.log(Status.INFO, "Wrong  Button Enable");
+					testCase.log(Status.FAIL, " Button Enable Wrong");
 				}
 //				Check position
 				Point ActualLocation = UnitPage.AddUnit.getLocation();
@@ -271,6 +275,40 @@ public class UnitTest1 extends DriverInitialization {
 					testCase.log(Status.FAIL, "Box-shadow is Wrong");
 		        }
 				Thread.sleep(3000);
+//				Check Opacity
+				String elementOpacity = UnitPage.AddUnit.getCssValue("opacity");
+				double ActualOpacity = Double.parseDouble(elementOpacity);
+				double ExpectedOpacity = 1.0;
+				testCase = extent.createTest("UNIT-OPACITY");
+				try {
+					Assert.assertEquals(ActualOpacity, ExpectedOpacity);
+					testCase.log(Status.INFO, "Actual Opacity :- " + ActualOpacity);
+					testCase.log(Status.INFO, "Expected Opacity :- " + ExpectedOpacity);
+					testCase.log(Status.INFO, "Correct Opacity");
+					testCase.log(Status.PASS, "Correct Opacity");
+				} catch (AssertionError e) {
+					testCase.log(Status.INFO, "Actual Opacity :- " + ActualOpacity);
+					testCase.log(Status.INFO, "Expected Opacity :- " + ExpectedOpacity);
+					testCase.log(Status.INFO, "wrong Opacity");
+					testCase.log(Status.FAIL, "wrong Opacity");
+				}
+//				Check Font-weight
+				String ActualFontWeight = ImagePage.image.getCssValue("opacity");
+				String ExpectedFontWeight = "111";
+				testCase = extent.createTest("IMAGE-FONT-WEIGHT");
+				try {
+					Assert.assertEquals(ActualFontWeight, ExpectedFontWeight);
+					testCase.log(Status.INFO, "Actual Font-weight :- " + ActualFontWeight);
+					testCase.log(Status.INFO, "Expected Font-weight :- " + ExpectedFontWeight);
+					testCase.log(Status.INFO, "Correct Font-weight");
+					testCase.log(Status.PASS, "Correct Font-weight");
+				} catch (AssertionError e) {
+					testCase.log(Status.INFO, "Actual Font-weight :- " + ActualFontWeight);
+					testCase.log(Status.INFO, "Expected Font-weight :- " + ExpectedFontWeight);
+					testCase.log(Status.INFO, "wrong Font-weight");
+					testCase.log(Status.FAIL, "wrong Font-weight");
+				}
+				
 //				if (UnitPage.AddUnit.isEnabled()) {
 //					UnitPage.AddUnit.click();
 //					boolean ExpectedTextClick = true;
@@ -300,7 +338,6 @@ public class UnitTest1 extends DriverInitialization {
 				testCase.log(Status.FAIL, "Not Visible Element");
 			}
 		} catch (NoSuchElementException e) {
-			testCase = extent.createTest("ADD UNIT-DONT HAVE LOCATER");
 			testCase.log(Status.INFO, "Dont Have This Element Locater");
 			testCase.log(Status.FAIL, "Unable to add SBU, So SMOKE FAIL");
 		}

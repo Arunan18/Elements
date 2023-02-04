@@ -15,7 +15,7 @@ Pages.MaterilaPage material = new Pages.MaterilaPage();
 		PageFactory.initElements(driver, material);
 		Thread.sleep(2500);
 		material.Material.click();
-		
+		 
 	}
 
 }

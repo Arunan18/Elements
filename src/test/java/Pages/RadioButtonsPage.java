@@ -38,4 +38,7 @@ public static WebElement ExternalRadioButtonClick;
 
 @FindBy(xpath = "//form[@class='ant-legacy-form ant-legacy-form-horizontal sc-gqjmRU brqWbd']/div[6]/div/div/div[1]")
 public static WebElement RadioButtonGroup;
+
+@FindBy(xpath = "//button[@type='button'][@class='ant-btn']")
+public static WebElement Cancel;
 }

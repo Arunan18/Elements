@@ -250,7 +250,7 @@ public class ForgotLinkTest extends DriverInitialization {
 
 			ForgotLinkPage.forgetlink.click();
 
-			String ExpectedLink = "http://192.168.1.35:8083/#/forgot";
+			String ExpectedLink = "http://qa-automation-release.s3-website-us-east-1.amazonaws.com/#/forgot";
 			Set<String> browserTabs = driver.getWindowHandles();
 			for (String str : browserTabs) {
 				if (!currTabBefore.equals(str)) {

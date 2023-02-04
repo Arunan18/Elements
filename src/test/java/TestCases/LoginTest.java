@@ -48,7 +48,7 @@ public class LoginTest extends DriverInitialization {
 		
 		    Assert.assertEquals(expec, actualurl );
 		    
-		      
+		      Thread.sleep(2000);
 		 
 		}
 	}
