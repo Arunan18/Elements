@@ -23,29 +23,29 @@ public class UnitTest1 extends DriverInitialization {
 		PageFactory.initElements(driver, up);
 		UnitPage.Unit.click();
 		Thread.sleep(2000);
-		testCase = extent.createTest("ADD UNIT-DONT HAVE LOCATER");
+//		testCase = extent.createTest("ADD UNIT-DONT HAVE LOCATER");
+		testCase = extent.createTest("UNIT-ELEMENT-VISIBLE");
 		try {
-			testCase.log(Status.INFO, "Locator Available");
-			testCase.log(Status.PASS, "Locator Available");
-			
-			if (UnitPage.AddUnit.isDisplayed()) {
-//				Check Button Displayed or not
-				boolean ExpectedButtonVisible = true;
-				boolean actualButtonVisible = UnitPage.AddUnit.isDisplayed();
-				testCase = extent.createTest("UNIT-ELEMENT-VISIBLE");
-				try {
-					Assert.assertEquals(actualButtonVisible, ExpectedButtonVisible);
-					testCase.log(Status.INFO, "ActualElement :- " + actualButtonVisible);
-					testCase.log(Status.INFO, "ExpectedElement :- " + ExpectedButtonVisible);
-					testCase.log(Status.INFO, "Element Available");
-					testCase.log(Status.PASS, "Correct element");
-					Thread.sleep(2000);
-				} catch (AssertionError e) {
-					testCase.log(Status.INFO, "ActualElement :- " + actualButtonVisible);
-					testCase.log(Status.INFO, "ExpectedElement :- " + ExpectedButtonVisible);
-					testCase.log(Status.INFO, "Element not available");
-					testCase.log(Status.FAIL, "Not Visible Element");
-				}
+//	 UnitPage.AddUnit.isDisplayed();
+//			Check Button Displayed or not
+			boolean ExpectedButtonVisible = true;
+			boolean actualButtonVisible = UnitPage.AddUnit.isDisplayed();
+			try {
+				Assert.assertEquals(actualButtonVisible, ExpectedButtonVisible);
+				testCase.log(Status.INFO, "ActualElement :- " + actualButtonVisible);
+				testCase.log(Status.INFO, "ExpectedElement :- " + ExpectedButtonVisible);
+				testCase.log(Status.INFO, "Element Available");
+				testCase.log(Status.PASS, "Correct element");
+				Thread.sleep(2000);
+			} catch (AssertionError e) {
+				testCase.log(Status.INFO, "ActualElement :- " + actualButtonVisible);
+				testCase.log(Status.INFO, "ExpectedElement :- " + ExpectedButtonVisible);
+				testCase.log(Status.INFO, "Element not available");
+				testCase.log(Status.FAIL, "Not Visible Element");
+			}
+			Thread.sleep(2000);
+			if (actualButtonVisible) {
+
 
 //				Check Button enabled or not
 				boolean ExpectedButtonEnable = true;
@@ -275,6 +275,7 @@ public class UnitTest1 extends DriverInitialization {
 					testCase.log(Status.FAIL, "Box-shadow is Wrong");
 		        }
 				Thread.sleep(3000);
+				
 //				Check Opacity
 				String elementOpacity = UnitPage.AddUnit.getCssValue("opacity");
 				double ActualOpacity = Double.parseDouble(elementOpacity);
@@ -292,9 +293,9 @@ public class UnitTest1 extends DriverInitialization {
 					testCase.log(Status.INFO, "wrong Opacity");
 					testCase.log(Status.FAIL, "wrong Opacity");
 				}
-//				Check Font-weight
-				String ActualFontWeight = ImagePage.image.getCssValue("opacity");
-				String ExpectedFontWeight = "111";
+////				Check Font-weight
+				String ActualFontWeight = UnitPage.AddUnit.getCssValue("font-weight");
+				String ExpectedFontWeight = "400";
 				testCase = extent.createTest("IMAGE-FONT-WEIGHT");
 				try {
 					Assert.assertEquals(ActualFontWeight, ExpectedFontWeight);
@@ -308,7 +309,24 @@ public class UnitTest1 extends DriverInitialization {
 					testCase.log(Status.INFO, "wrong Font-weight");
 					testCase.log(Status.FAIL, "wrong Font-weight");
 				}
-				
+//				
+//				background color
+				String bg1color = UnitPage.AddUnit.getCssValue("background-color");
+				String Actualbgcolor = Color.fromString(bg1color).asHex();
+		        String Expectedbgcolor = "#001328";
+
+		        testCase = extent.createTest("UNIT BUTTON BACKGROUND COLOR");
+		        try {
+		            Assert.assertEquals(Actualbgcolor, Expectedbgcolor);
+		            testCase.log(Status.INFO, "Actual background color :- " + Actualbgcolor);
+		            testCase.log(Status.INFO, "Expected background color :- " + Expectedbgcolor);
+		            testCase.log(Status.PASS, " background color Correct ");
+		        } catch (AssertionError e) {
+		            testCase.log(Status.INFO, "Actual background color :- " + Actualbgcolor);
+		            testCase.log(Status.INFO, "Expected background color :- " + Expectedbgcolor);    
+		            testCase.log(Status.FAIL, " background color wrong");
+		        }
+		        
 //				if (UnitPage.AddUnit.isEnabled()) {
 //					UnitPage.AddUnit.click();
 //					boolean ExpectedTextClick = true;
@@ -338,6 +356,7 @@ public class UnitTest1 extends DriverInitialization {
 				testCase.log(Status.FAIL, "Not Visible Element");
 			}
 		} catch (NoSuchElementException e) {
+		testCase = extent.createTest("UNIT-LOCATER");
 			testCase.log(Status.INFO, "Dont Have This Element Locater");
 			testCase.log(Status.FAIL, "Unable to add SBU, So SMOKE FAIL");
 		}

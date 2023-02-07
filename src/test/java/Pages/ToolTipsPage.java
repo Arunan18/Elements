@@ -28,12 +28,10 @@ public class ToolTipsPage {
 	public static WebElement Duedaytoggle;
 	
 	
-     @FindBy(xpath = "/html/body/div[3]/div/div")
+     @FindBy(xpath = "//div[@class='ant-tooltip-content']")
      public static WebElement tooltip;
+  
      
-     @FindBy(xpath = "/html/body/div[2]/div/div/div/div[1]/span")
-     public static WebElement arrow;
-     
-     @FindBy(xpath = "//*[@id=\"root\"]/div/section/section/main/div/div/div[2]/div/div[2]/div/div/div[2]/div[4]/div[4]")
+     @FindBy(xpath = "//div[@class='ant-col ant-col-4']")
      public static WebElement tounhover;
 }

@@ -3,6 +3,10 @@
 <suite name="Suite">
 	<test name="Radio">
 		<classes>
+		<!--<class name="TestCases.LoginTest" />
+		<class name="TestCases.TogglebuttonTest" />
+		<class name="TestCases.ToolTipsTest" />
+			<class name="TestCases.RadioButtonsTest" />-->
 			<class name="TestCases.ImageTest" />
 			<class name="TestCases.ForgotLinkTest" />
 			<class name="TestCases.LoginTest" />
@@ -15,7 +19,7 @@
 			<class name="TestCases.HomeTest" />
 			<class name="TestCases.Check_boxtest" />
 			<class name="TestCases.TogglebuttonTest" />
-			<class name="TestCases.ToolTipsTest" />
+			<class name="TestCases.ToolTest" />
 			<class name="TestCases.RadioButtonsTest" />
 			
 			

@@ -163,5 +163,5 @@ public void Image() throws InterruptedException {
 		testCase.log(Status.FAIL, " Dont Have Image Locator");
 	}
 }
-	
+	 
 }

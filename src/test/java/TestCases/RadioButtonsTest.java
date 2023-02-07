@@ -43,7 +43,7 @@ RadioButtonsPage rbp= new RadioButtonsPage();
 			testCase.log(Status.INFO, "Wrong Radio Button Heading");
 			testCase.log(Status.FAIL, "Radio Button Heading is Wrong");
 		}
-		
+		Thread.sleep(2000);
 //		Internal Radio Button Visible
 		boolean ExpectedInternalRadioVisible=true;
 		boolean ActualInternalRadioVisible=RadioButtonsPage.InternalRadioButton.isDisplayed();
@@ -58,7 +58,7 @@ RadioButtonsPage rbp= new RadioButtonsPage();
 			testCase.log(Status.INFO, "Expected Internal Radio Button Visible :- " + ExpectedInternalRadioVisible);
 			testCase.log(Status.FAIL, "Internal Radio Button Visible is Wrong");
 		}
-		
+		Thread.sleep(2000);
 //		External Radio Button Visible
 		boolean ExpectedExternalRadioVisible=true;
 		boolean ActualExternalRadioVisible=RadioButtonsPage.ExternalRadioButton.isDisplayed();
@@ -73,7 +73,7 @@ RadioButtonsPage rbp= new RadioButtonsPage();
 			testCase.log(Status.INFO, "Expected External Radio Button Visible :- " + ExpectedExternalRadioVisible);
 			testCase.log(Status.FAIL, "External Radio Button Visible is Wrong");
 		}
-		
+		Thread.sleep(2000);
 //		Internal Radio Button Text
 		String ExpectedInternalRadioText="Internal";
 		String ActualInternalRadioText=RadioButtonsPage.InternalRadioText.getText();
@@ -88,7 +88,7 @@ RadioButtonsPage rbp= new RadioButtonsPage();
 			testCase.log(Status.INFO, "Expected Internal Radio Button Text :- " + ExpectedInternalRadioText);
 			testCase.log(Status.FAIL, "Text Radio Button Visible is Wrong");
 		}
-		
+		Thread.sleep(2000);
 //		External Radio Button Text
 		String ExpectedExternalRadioText="External";
 		String ActualExternalRadioText=RadioButtonsPage.ExternalRadioText.getText();

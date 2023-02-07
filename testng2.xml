@@ -5,7 +5,7 @@
 
 		<classes>
 			<class name="TestCases.LoginTest" />
-			<class name="TestCases.Radio" />
+			<class name="TestCases.PaginationTest" />
 			
 
 			<!-- <class name="TestCases.AdminTest"/> 

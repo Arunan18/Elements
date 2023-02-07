@@ -3,7 +3,9 @@ import java.io.IOException;
 
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
+import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 
@@ -11,6 +13,7 @@ import com.aventstack.extentreports.Status;
 
 import Base.DriverInitialization;
 import Pages.IconPage;
+import Pages.UnitPage;
 
 public class IconTest extends DriverInitialization{
 
@@ -192,14 +195,31 @@ public class IconTest extends DriverInitialization{
 					testCase.log(Status.FAIL, "wrong");
 				}
 			
-			boolean ActualIconEnable=IconPage.IMG.isEnabled();
-			boolean ExpectedIconEnable=true;
-			testCase = extent.createTest("Icon -Enable");
-			try {
-				
-			} catch (AssertionError e) {
-				// TODO: handle exception
-			}
+//			background color
+			String bgcolor = IconPage.IMG.getCssValue("background-color");
+			String Actualbgcolor = Color.fromString(bgcolor).asHex();
+	        String Expectedbgcolor = "#000000";
+
+	        testCase = extent.createTest("Icon BACKGROUND COLOR");
+	        try {
+	            Assert.assertEquals(Actualbgcolor, Expectedbgcolor);
+	            testCase.log(Status.INFO, "Actual background color :- " + Actualbgcolor);
+	            testCase.log(Status.INFO, "Expected background color :- " + Expectedbgcolor);
+	            testCase.log(Status.PASS, " background color Correct ");
+	        } catch (AssertionError e) {
+	            testCase.log(Status.INFO, "Actual background color :- " + Actualbgcolor);
+	            testCase.log(Status.INFO, "Expected background color :- " + Expectedbgcolor);    
+	            testCase.log(Status.FAIL, " background color wrong");
+	        }
+		
+//			boolean ActualIconEnable=IconPage.IMG.isEnabled();
+//			boolean ExpectedIconEnable=true;
+//			testCase = extent.createTest("Icon -Enable");
+//			try {
+//				
+//			} catch (AssertionError e) {
+//				// TODO: handle exception
+//			}
 			
 	/*End width & height*/	
 	
