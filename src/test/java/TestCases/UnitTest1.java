@@ -309,7 +309,7 @@ public class UnitTest1 extends DriverInitialization {
 					testCase.log(Status.INFO, "wrong Font-weight");
 					testCase.log(Status.FAIL, "wrong Font-weight");
 				}
-//				
+//				 
 //				background color
 				String bg1color = UnitPage.AddUnit.getCssValue("background-color");
 				String Actualbgcolor = Color.fromString(bg1color).asHex();

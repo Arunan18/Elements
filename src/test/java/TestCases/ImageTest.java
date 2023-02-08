@@ -134,9 +134,9 @@ public void Image() throws InterruptedException {
 					testCase.log(Status.INFO, "Expected Tittle :- " + ExpectedTittle);
 					testCase.log(Status.FAIL, "Tittle is Wrong");
 		        }
-		        
+		         
 //				Alt
-		        String ActualAlt = ImagePage.image.getAttribute("title");
+		        String ActualAlt = ImagePage.image.getAttribute("alt");
 		        String ExpectedAlt = "";
 		        testCase = extent.createTest("IMAGE ALT");
 		        try {

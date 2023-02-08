@@ -11,6 +11,8 @@
 			<class name="TestCases.ForgotLinkTest" />
 			<class name="TestCases.LoginTest" />
 			<class name="TestCases.MasterTest" />
+			<class name="TestCases.TabTest" />
+			<class name="TestCases.ModalTest" />
 			<class name="TestCases.MandatoryFieldTest" />
 			<class name="TestCases.MaterialTest" />
 			<class name="TestCases.Dropdown" />
