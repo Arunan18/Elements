@@ -1,5 +1,6 @@
 package TestCases;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
@@ -511,5 +512,7 @@ RadioButtonsPage rbp= new RadioButtonsPage();
 		RadioButtonsPage.Cancel.click();
 		Thread.sleep(2000);
 		
+		driver.findElement(By.xpath("//a[@class='sc-bdVaJa ieeiNp'][@href='#/']")).click();
+		Thread.sleep(1000);
 	}
 }

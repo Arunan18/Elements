@@ -4,6 +4,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
 import Base.DriverInitialization;
+import Pages.MaterilaPage;
 
 public class MaterialTest extends DriverInitialization {
 	
@@ -14,7 +15,7 @@ Pages.MaterilaPage material = new Pages.MaterilaPage();
 		Thread.sleep(3000);
 		PageFactory.initElements(driver, material);
 		Thread.sleep(2500);
-		material.Material.click();
+		MaterilaPage.Material.click();
 		 
 	}
 

@@ -23,8 +23,8 @@ public class TogglebuttonTest extends DriverInitialization {
 	public void testconfiguration() throws InterruptedException {
 		PageFactory.initElements(driver, testconfig);
 
-			Thread.sleep(2000);
-			TogglebuttonPage.testcongichomebutton.click();
+//			Thread.sleep(2000);
+//			TogglebuttonPage.testcongichomebutton.click();
 		Thread.sleep(2000);
 		TogglebuttonPage.testconfigbutton.click();
 		Thread.sleep(2000);
@@ -241,5 +241,8 @@ public class TogglebuttonTest extends DriverInitialization {
 			testCase.log(Status.INFO, "Element not available");
 			testCase.log(Status.FAIL, "No Element");
 		}
+		
+		driver.navigate().refresh();
+		Thread.sleep(2000);
 	}
 }

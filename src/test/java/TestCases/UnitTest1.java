@@ -21,6 +21,7 @@ public class UnitTest1 extends DriverInitialization {
 	@Test
 	public void Unit() throws InterruptedException {
 		PageFactory.initElements(driver, up);
+		Thread.sleep(2000);
 		UnitPage.Unit.click();
 		Thread.sleep(2000);
 //		testCase = extent.createTest("ADD UNIT-DONT HAVE LOCATER");

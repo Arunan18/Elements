@@ -29,7 +29,7 @@ public class PaginationTest extends DriverInitialization {
 		PaginationPage.MaterialSub.click();
 		Thread.sleep(1000);
 		PaginationPage.unit.click();
-		Thread.sleep(4000);
+		Thread.sleep(3000);
 //		Default Index Page
 		boolean ActualDefaultPageIndex = PaginationPage.DefaultPaginationPage.isDisplayed();
 		boolean ExpectedDefaultPageIndex = true;
@@ -213,10 +213,15 @@ public class PaginationTest extends DriverInitialization {
 			testCase.log(Status.INFO, "ExpectedElement :- " + ExpectedPreviousBtnEnable);
 			testCase.log(Status.FAIL, "Not Enable Element");
 		}
-		Thread.sleep(2000);
+//		****************************************************************************************************************
 		driver.navigate().refresh();
 		Thread.sleep(2000);
-//		Total Page 10/Page 
+//		PaginationPage.CurrentPaginationOpction.click();
+//		Thread.sleep(2000);
+//		PaginationPage.Page_20.click();
+//		PaginationPage.Page_30.click();
+//		PaginationPage.Page_100.click();
+//		Thread.sleep(2000); 
 		int ActualTotalPage = 0;
 		boolean Enablity = PaginationPage.NextPageBtn.isEnabled();
 		while (Enablity) {
@@ -225,82 +230,77 @@ public class PaginationTest extends DriverInitialization {
 			PaginationPage.NextPageBtn.click();
 			ActualTotalPage = ActualTotalPage + 1;
 		}
-		int ExpectedTotalPage = 3;
-		testCase = extent.createTest("PAGINATION-TOTAL-PAGE-COUNT");
-		try {
-			Assert.assertEquals(ActualTotalPage, ExpectedTotalPage);
-			testCase.log(Status.INFO, "Actual Page Count :- " + ActualTotalPage);
-			testCase.log(Status.INFO, "Expected Page Count :- " + ExpectedTotalPage);
-			testCase.log(Status.PASS, "Correct Page Count");
-		} catch (AssertionError e) {
-			testCase.log(Status.INFO, "Actual Page Count :- " + ActualTotalPage);
-			testCase.log(Status.INFO, "Expected Page Count :- " + ExpectedTotalPage);
-			testCase.log(Status.FAIL, "Wrong Page Count");
+		Thread.sleep(2000);
+//		Total Page 10/Page 
+		if (PaginationPage.CurrentPaginationOpction.getText().contentEquals("10 / page")) {
+			int ExpectedTotalPage = 3;
+			testCase = extent.createTest("PAGINATION-TOTAL-PAGE-COUNT");
+			try {
+				Assert.assertEquals(ActualTotalPage, ExpectedTotalPage);
+				testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+				testCase.log(Status.INFO, "Actual Page Count :- " + ActualTotalPage);
+				testCase.log(Status.INFO, "Expected Page Count :- " + ExpectedTotalPage);
+				testCase.log(Status.PASS, "Correct Page Count");
+			} catch (AssertionError e) {
+				testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+				testCase.log(Status.INFO, "Actual Page Count :- " + ActualTotalPage);
+				testCase.log(Status.INFO, "Expected Page Count :- " + ExpectedTotalPage);
+				testCase.log(Status.FAIL, "Wrong Page Count");
+			}
+		} else if (PaginationPage.CurrentPaginationOpction.getText().contentEquals("20 / page")) {
+			int ExpectedTotalPage = 2;
+			testCase = extent.createTest("PAGINATION-TOTAL-PAGE-COUNT");
+			try {
+				Assert.assertEquals(ActualTotalPage, ExpectedTotalPage);
+				testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+				testCase.log(Status.INFO, "Actual Page Count :- " + ActualTotalPage);
+				testCase.log(Status.INFO, "Expected Page Count :- " + ExpectedTotalPage);
+				testCase.log(Status.PASS, "Correct Page Count");
+			} catch (AssertionError e) {
+				testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+				testCase.log(Status.INFO, "Actual Page Count :- " + ActualTotalPage);
+				testCase.log(Status.INFO, "Expected Page Count :- " + ExpectedTotalPage);
+				testCase.log(Status.FAIL, "Wrong Page Count");
+			}
+		} else if (PaginationPage.CurrentPaginationOpction.getText().contentEquals("30 / page")) {
+			int ExpectedTotalPage = 1;
+			testCase = extent.createTest("PAGINATION-TOTAL-PAGE-COUNT");
+			try {
+				Assert.assertEquals(ActualTotalPage, ExpectedTotalPage);
+				testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+				testCase.log(Status.INFO, "Actual Page Count :- " + ActualTotalPage);
+				testCase.log(Status.INFO, "Expected Page Count :- " + ExpectedTotalPage);
+				testCase.log(Status.PASS, "Correct Page Count");
+			} catch (AssertionError e) {
+				testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+				testCase.log(Status.INFO, "Actual Page Count :- " + ActualTotalPage);
+				testCase.log(Status.INFO, "Expected Page Count :- " + ExpectedTotalPage);
+				testCase.log(Status.FAIL, "Wrong Page Count");
+			}
+		} else if (PaginationPage.CurrentPaginationOpction.getText().contentEquals("100 / page")) {
+			int ExpectedTotalPage = 1;
+			testCase = extent.createTest("PAGINATION-TOTAL-PAGE-COUNT");
+			try {
+				Assert.assertEquals(ActualTotalPage, ExpectedTotalPage);
+				testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+				testCase.log(Status.INFO, "Actual Page Count :- " + ActualTotalPage);
+				testCase.log(Status.INFO, "Expected Page Count :- " + ExpectedTotalPage);
+				testCase.log(Status.PASS, "Correct Page Count");
+			} catch (AssertionError e) {
+				testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+				testCase.log(Status.INFO, "Actual Page Count :- " + ActualTotalPage);
+				testCase.log(Status.INFO, "Expected Page Count :- " + ExpectedTotalPage);
+				testCase.log(Status.FAIL, "Wrong Page Count");
+			}
 		}
+		
 
-		// Total Text Position
-		Point ActualPositionTotalText = PaginationPage.totalText.getLocation();
-		Point ExpectedPositionTotalText = new Point(460, 298);
-		testCase = extent.createTest("PAGINATION_TOTAL_TEXT_POSITION");
-		try {
-			Assert.assertEquals(ActualPositionTotalText, ExpectedPositionTotalText);
-			testCase.log(Status.INFO, "Actual Position :- " + ActualPositionTotalText);
-			testCase.log(Status.INFO, "Expected Position :- " + ExpectedPositionTotalText);
-			testCase.log(Status.PASS, "Correct Position");
-		} catch (AssertionError e) {
-			testCase.log(Status.INFO, "Actual Position :- " + ActualPositionTotalText);
-			testCase.log(Status.INFO, "Expected Position:- " + ExpectedPositionTotalText);
-			testCase.log(Status.FAIL, "Wrong Position");
-		}
+		Thread.sleep(1000);
+		driver.navigate().refresh();
 
-//				Current Pagination Opction Position
-		Point ActualPositionCurrentPagination = PaginationPage.CurrentPaginationOpction.getLocation();
-		Point ExpectedPositionCurrentPagination = new Point(661, 298);
-		testCase = extent.createTest("CURRENT-PAGINATION_POSITION");
-		try {
-			Assert.assertEquals(ActualPositionCurrentPagination, ExpectedPositionCurrentPagination);
-			testCase.log(Status.INFO, "Actual Position :- " + ActualPositionCurrentPagination);
-			testCase.log(Status.INFO, "Expected Position :- " + ExpectedPositionCurrentPagination);
-			testCase.log(Status.PASS, "Correct Position");
-		} catch (AssertionError e) {
-			testCase.log(Status.INFO, "Actual Position :- " + ActualPositionCurrentPagination);
-			testCase.log(Status.INFO, "Expected Position:- " + ExpectedPositionCurrentPagination);
-			testCase.log(Status.FAIL, "Wrong Position");
-		}
-
-//				Previous Button Position
-		Point ActualPositionPreviousButton = PaginationPage.PreviousPageBtn.getLocation();
-		Point ExpectedPositionPreviousButton = new Point(539, 298);
-		testCase = extent.createTest("PAGINATION-PREVIOUS-BUTTON-POSITION");
-		try {
-			Assert.assertEquals(ActualPositionPreviousButton, ExpectedPositionPreviousButton);
-			testCase.log(Status.INFO, "Actual Position :- " + ActualPositionPreviousButton);
-			testCase.log(Status.INFO, "Expected Position :- " + ExpectedPositionPreviousButton);
-			testCase.log(Status.PASS, "Correct Position");
-		} catch (AssertionError e) {
-			testCase.log(Status.INFO, "Actual Position :- " + ActualPositionPreviousButton);
-			testCase.log(Status.INFO, "Expected Position:- " + ExpectedPositionPreviousButton);
-			testCase.log(Status.FAIL, "Wrong Position");
-		}
-
-//				Next Button Position
-		Point ActualPositionNextButton = PaginationPage.NextPageBtn.getLocation();
-		Point ExpectedPositionNextButton = new Point(635, 298);
-		testCase = extent.createTest("PAGINATION-NEXT-BUTTON-POSITION");
-		try {
-			Assert.assertEquals(ActualPositionNextButton, ExpectedPositionNextButton);
-			testCase.log(Status.INFO, "Actual Position :- " + ActualPositionNextButton);
-			testCase.log(Status.INFO, "Expected Position :- " + ExpectedPositionNextButton);
-			testCase.log(Status.PASS, "Correct Position");
-		} catch (AssertionError e) {
-			testCase.log(Status.INFO, "Actual Position :- " + ActualPositionNextButton);
-			testCase.log(Status.INFO, "Expected Position:- " + ExpectedPositionNextButton);
-			testCase.log(Status.FAIL, "Wrong Position");
-		}
-
-//				Page Number Position
-		Point ActualPositionPage = PaginationPage.PageNumber.getLocation();
-		Point ExpectedPositionPage = new Point(564, 299);
+//			 Position
+		Point ActualPositionPage = PaginationPage.pagination.getLocation();
+		Point ExpectedPositionPage = new Point(177, 337);
 		testCase = extent.createTest("PAGINATION-PAGE-NUMBER-POSITION");
 		try {
 			Assert.assertEquals(ActualPositionPage, ExpectedPositionPage);
@@ -315,7 +315,7 @@ public class PaginationTest extends DriverInitialization {
 
 		// Total Text Width
 		int ActualWidthTotalText = PaginationPage.totalText.getSize().width;
-		int ExpectedWidthTotalText = 71;
+		int ExpectedWidthTotalText =  63;
 		testCase = extent.createTest("PAGINATION_TOTAL_TEXT-WIDTH");
 		try {
 			Assert.assertEquals(ActualWidthTotalText, ExpectedWidthTotalText);
@@ -528,11 +528,12 @@ public class PaginationTest extends DriverInitialization {
 			testCase.log(Status.FAIL, "Wrong FontColor");
 		}
 
-//										Page Number FontColor
+//										Page Number FontColor after selecting
+		
 		String ae = PaginationPage.PageNumber.getCssValue("color");
 		String ActualFontColorPage = Color.fromString(ae).asHex();
-		String ExpectedFontColorPage = "#000000";
-		testCase = extent.createTest("PAGINATION-PAGE-NUMBER-FONT_COLOR");
+		String ExpectedFontColorPage = "#1890ff";
+		testCase = extent.createTest("PAGINATION-PAGE-NUMBER-FONT_COLOR-AFTER-SELECTION");
 		try {
 			Assert.assertEquals(ActualFontColorPage, ExpectedFontColorPage);
 			testCase.log(Status.INFO, "Actual FontColor :- " + ActualFontColorPage);
@@ -543,8 +544,27 @@ public class PaginationTest extends DriverInitialization {
 			testCase.log(Status.INFO, "Expected FontColor:- " + ExpectedFontColorPage);
 			testCase.log(Status.FAIL, "Wrong FontColor");
 		}
+		
+		
+//		Page Number FontColor before selecting
+		PaginationPage.NextPageBtn.click();
+		Thread.sleep(1000);
+String af = PaginationPage.PageNumber.getCssValue("color");
+String ActualFontColorPage1 = Color.fromString(af).asHex();
+String ExpectedFontColorPage1 = "#000000";
+testCase = extent.createTest("PAGINATION-PAGE-NUMBER-FONT_COLOR-BEFORE-SELECTION");
+try {
+Assert.assertEquals(ActualFontColorPage1, ExpectedFontColorPage1);
+testCase.log(Status.INFO, "Actual FontColor :- " + ActualFontColorPage1);
+testCase.log(Status.INFO, "Expected FontColor :- " + ExpectedFontColorPage1);
+testCase.log(Status.PASS, "Correct FontColor");
+} catch (AssertionError e) {
+testCase.log(Status.INFO, "Actual FontColor :- " + ActualFontColorPage1);
+testCase.log(Status.INFO, "Expected FontColor:- " + ExpectedFontColorPage1);
+testCase.log(Status.FAIL, "Wrong FontColor");
+}
 //										**********
-
+driver.navigate().refresh();
 		// Total Text BcColor
 		String ba = PaginationPage.totalText.getCssValue("background-color");
 		String ActualBcColorTotalText = Color.fromString(ba).asHex();
@@ -651,27 +671,166 @@ public class PaginationTest extends DriverInitialization {
 //		String UnitColumnAfter = "]/td[1]";
 //		String BeforePage = "//li[@title='";
 //		String AfterPage = "']/a";
-
+//*******************************************************************************************************************************
 		driver.navigate().refresh();
+//		PaginationPage.CurrentPaginationOpction.click();
+//		Thread.sleep(2000);
+//		PaginationPage.Page_20.click();
+//		PaginationPage.Page_30.click();
+//		PaginationPage.Page_100.click();
 		Thread.sleep(2000);
-		int TotalData = 0;
+		int ActualTotalData = 0;
 		for (int j = 1; j <= ActualTotalPage; j++) {
 			Thread.sleep(2000);
-			int PageIndex=PaginationPage.UnitColumn.size();
-			TotalData = TotalData + (PageIndex-1);
-//				}
-
-//			}
-			System.out.println("PageIndex :-"+ (PageIndex-1));
-			System.out.println("TotalData :- "+TotalData);
+			int PageIndex = PaginationPage.UnitColumn.size();
+			ActualTotalData = ActualTotalData + (PageIndex - 1);
+			System.out.println(PaginationPage.totalText.getText());
+			System.out.println("PageIndex :-" + (PageIndex - 1));
+//			System.out.println("TotalData :- "+TotalData);
 			PaginationPage.NextPageBtn.click();
-			
 		}
-Thread.sleep(2000);
-		System.out.println(TotalData);
+		System.out.println(ActualTotalData);
+		int ExpectedTotalData = 23;
+		testCase = extent.createTest("PAGINATION-TOTAL-DATA");
+		try {
+			Assert.assertEquals(ActualTotalData, ExpectedTotalData);
+			testCase.log(Status.INFO, "Actual TotalData :- " + ActualTotalData);
+			testCase.log(Status.INFO, "Expected TotalData :- " + ExpectedTotalData);
+			testCase.log(Status.PASS, "Correct TotalData");
+		} catch (AssertionError e) {
+			testCase.log(Status.INFO, "Actual TotalData :- " + ActualTotalData);
+			testCase.log(Status.INFO, "Expected TotalData:- " + ExpectedTotalData);
+			testCase.log(Status.FAIL, "Wrong TotalData");
+		}
+		
+//		*************************************************************************************************************************
+		driver.navigate().refresh();
+//		Thread.sleep(2000);
+//		PaginationPage.CurrentPaginationOpction.click();
+		Thread.sleep(3000);
+//		PaginationPage.Page_20.click();
+//		Thread.sleep(2000);
+//		PaginationPage.Page_30.click();
+//		Thread.sleep(2000);
+//		PaginationPage.Page_100.click();
+//		Thread.sleep(2000); 
+//		System.out.println("****"+PaginationPage.CurrentPaginationOpction.getText());
+//		Total Count of the 10/page index
+		if (PaginationPage.CurrentPaginationOpction.getText().contentEquals("10 / page")) {
+			int ActualPageIndex_10 = (PaginationPage.UnitColumn.size() - 1);
+			testCase = extent.createTest("PAGINATION-TOTAL-DATA-OF-10/PAGE-INDEX");
 
-		System.out.println(ActualTotalPage);
-//		System.out.println(sum);
+			if (0 <= ActualPageIndex_10) {
+				if (ActualPageIndex_10 <= 10) {
+					try {
+						Assert.assertEquals(ActualPageIndex_10, ActualPageIndex_10);
+						testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+						testCase.log(Status.INFO, "Actual TotalData :- " + ActualPageIndex_10);
+						testCase.log(Status.PASS, "Correct TotalData");
+					} catch (AssertionError e) {
+						testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+						testCase.log(Status.INFO, "Actual TotalData :- " + ActualPageIndex_10);
+						testCase.log(Status.FAIL, "Wrong TotalData");
+					}
 
+				} else {
+					testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+					testCase.log(Status.INFO, "Actual TotalData :- " + ActualPageIndex_10);
+					testCase.log(Status.FAIL, "Wrong TotalData");
+				}
+			} else {
+				testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+				testCase.log(Status.INFO, "Actual TotalData :- " + ActualPageIndex_10);
+				testCase.log(Status.FAIL, "Wrong TotalData");
+			}
+
+		}
+//		Total Count of the 20/page index
+		else if (PaginationPage.CurrentPaginationOpction.getText().contentEquals("20 / page")) {
+			int ActualPageIndex_20 = (PaginationPage.UnitColumn.size() - 1);
+			testCase = extent.createTest("PAGINATION-TOTAL-DATA-OF-20/PAGE-INDEX");
+
+			if (0 <= ActualPageIndex_20) {
+				if (ActualPageIndex_20 <= 20) {
+					try {
+						Assert.assertEquals(ActualPageIndex_20, ActualPageIndex_20);
+						testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+						testCase.log(Status.INFO, "Actual TotalData :- " + ActualPageIndex_20);
+						testCase.log(Status.PASS, "Correct TotalData");
+					} catch (AssertionError e) {
+						testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+						testCase.log(Status.INFO, "Actual TotalData :- " + ActualPageIndex_20);
+						testCase.log(Status.FAIL, "Wrong TotalData");
+					}
+				} else {
+					testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+					testCase.log(Status.INFO, "Actual TotalData :- " + ActualPageIndex_20);
+					testCase.log(Status.FAIL, "Wrong TotalData");
+				}
+			} else {
+				testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+				testCase.log(Status.INFO, "Actual TotalData :- " + ActualPageIndex_20);
+				testCase.log(Status.FAIL, "Wrong TotalData");
+			}
+
+		}
+//		Total Count of the 30/page index
+		else if (PaginationPage.CurrentPaginationOpction.getText().contentEquals("30 / page")) {
+			int ActualPageIndex_30 = (PaginationPage.UnitColumn.size() - 1);
+			testCase = extent.createTest("PAGINATION-TOTAL-DATA-OF-10/PAGE-INDEX");
+
+			if (0 <= ActualPageIndex_30) {
+				if (ActualPageIndex_30 <= 30) {
+					try {
+						Assert.assertEquals(ActualPageIndex_30, ActualPageIndex_30);
+						testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+						testCase.log(Status.INFO, "Actual TotalData :- " + ActualPageIndex_30);
+						testCase.log(Status.PASS, "Correct TotalData");
+					} catch (AssertionError e) {
+						testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+						testCase.log(Status.INFO, "Actual TotalData :- " + ActualPageIndex_30);
+						testCase.log(Status.FAIL, "Wrong TotalData");
+					}
+				} else {
+					testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+					testCase.log(Status.INFO, "Actual TotalData :- " + ActualPageIndex_30);
+					testCase.log(Status.FAIL, "Wrong TotalData");
+				}
+			} else {
+				testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+				testCase.log(Status.INFO, "Actual TotalData :- " + ActualPageIndex_30);
+				testCase.log(Status.FAIL, "Wrong TotalData");
+			}
+
+		}
+//		Total Count of the 100/page index
+		else if (PaginationPage.CurrentPaginationOpction.getText().contentEquals("100 / page")) {
+			int ActualPageIndex_100 = (PaginationPage.UnitColumn.size() - 1);
+			testCase = extent.createTest("PAGINATION-TOTAL-DATA-OF-100/PAGE-INDEX");
+
+			if (0 <= ActualPageIndex_100) {
+				if (ActualPageIndex_100 <= 100) {
+					try {
+						Assert.assertEquals(ActualPageIndex_100, ActualPageIndex_100);
+						testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+						testCase.log(Status.INFO, "Actual TotalData :- " + ActualPageIndex_100);
+						testCase.log(Status.PASS, "Correct TotalData");
+					} catch (AssertionError e) {
+						testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+						testCase.log(Status.INFO, "Actual TotalData :- " + ActualPageIndex_100);
+						testCase.log(Status.FAIL, "Wrong TotalData");
+					}
+				} else {
+					testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+					testCase.log(Status.INFO, "Actual TotalData :- " + ActualPageIndex_100);
+					testCase.log(Status.FAIL, "Wrong TotalData");
+				}
+			} else {
+				testCase.log(Status.INFO, "Current Pagination Opction :- " + PaginationPage.CurrentPaginationOpction.getText());
+				testCase.log(Status.INFO, "Actual TotalData :- " + ActualPageIndex_100);
+				testCase.log(Status.FAIL, "Wrong TotalData");
+			}
+
+		}
 	}
 }

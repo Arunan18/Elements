@@ -137,7 +137,7 @@ public void Image() throws InterruptedException {
 		         
 //				Alt
 		        String ActualAlt = ImagePage.image.getAttribute("alt");
-		        String ExpectedAlt = "";
+		        String ExpectedAlt = "Logo";
 		        testCase = extent.createTest("IMAGE ALT");
 		        try {
 		            Assert.assertEquals(ActualAlt, ExpectedAlt);

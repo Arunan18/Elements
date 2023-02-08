@@ -16,7 +16,7 @@ public class PaginationPage {
 	
 	@FindBy(xpath = "//li[@class='ant-pagination-total-text']")
 	public static WebElement totalText;
-	@FindBy(xpath = "//ul[@class='ant-pagination mini ant-table-pagination ant-table-pagination-right']/li[7]")
+	@FindBy(xpath = "//ul[@class='ant-pagination mini ant-table-pagination ant-table-pagination-right']/li/div")
 	public static WebElement CurrentPaginationOpction;
 	@FindBy(xpath = "//li[@title='1']/a")
 	public static WebElement PageNumber;
@@ -37,6 +37,16 @@ public class PaginationPage {
 	public static WebElement DefaultPaginationPage;
 	@FindBy(xpath = "//li[@title='2'][@class='ant-pagination-item ant-pagination-item-2 ant-pagination-item-active']")
 	public static WebElement PaginationSecoundPage;
+	
+	@FindBy(xpath = "//*[@class='ant-select-item ant-select-item-option'][@title='20 / page']")
+	public static WebElement Page_20;
+	@FindBy(xpath = "//*[@class='ant-select-item ant-select-item-option'][@title='30 / page']")
+	public static WebElement Page_30;
+	@FindBy(xpath = "//*[@class='ant-select-item ant-select-item-option'][@title='100 / page']")
+	public static WebElement Page_100;
+	
+	@FindBy(xpath = "//ul[@class='ant-pagination mini ant-table-pagination ant-table-pagination-right']")
+	public static WebElement pagination;
 	
 	
 }

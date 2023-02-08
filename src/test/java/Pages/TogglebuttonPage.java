@@ -8,7 +8,7 @@ public class TogglebuttonPage {
     public static WebElement testcongichomebutton;
 	
 	
-	@FindBy (xpath = "//*[@id=\"root\"]/div/section/section/main/div/div/div[1]/div/div[3]/div[1]")
+	@FindBy (xpath = "//div[@class='sc-htoDjs jApeNY']/div[3]")
     public static WebElement testconfigbutton;
 	
 	@FindBy(xpath = "//button[@type='button'][@role='switch']")
