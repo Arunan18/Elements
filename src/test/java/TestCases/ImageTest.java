@@ -1,6 +1,7 @@
 package TestCases;
 
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.support.PageFactory;
@@ -149,8 +150,36 @@ public void Image() throws InterruptedException {
 					testCase.log(Status.INFO, "Expected Alt :- " + ExpectedAlt);
 					testCase.log(Status.FAIL, "Alt is Wrong");
 		        }
-		        
-		        
+		        Thread.sleep(2000);
+//		    	Image Filter
+		    	Object ActualFilter =((JavascriptExecutor)driver).executeScript("arguments[0].style.filter = 'blur(5px)'", ImagePage.image);
+		    	Object ExpectedFilter =null;
+		    	 testCase = extent.createTest("IMAGE FILTER");
+			        try {
+			            Assert.assertEquals(ActualFilter, ExpectedFilter);
+			            testCase.log(Status.INFO, "Actual Filter :- " + ActualFilter);
+						testCase.log(Status.INFO, "Expected Filter :- " + ExpectedFilter);
+						testCase.log(Status.PASS, "Filter is Correct");
+					} catch (AssertionError e) {
+						testCase.log(Status.INFO, "Actual Filter :- " + ActualFilter);
+						testCase.log(Status.INFO, "Expected Filter :- " + ExpectedFilter);
+						testCase.log(Status.FAIL, "Filter is Wrong");
+			        }
+//			        Image clickable
+			        boolean ActualImageEnable = ImagePage.image.isEnabled();
+			        boolean ExpectedImageEnable = false;
+			        testCase = extent.createTest("IMAGE CLICKABLE");
+			        try {
+			            Assert.assertEquals(ActualImageEnable, ExpectedImageEnable);
+			            testCase.log(Status.INFO, "Actual Image clickable :- " + ActualImageEnable);
+						testCase.log(Status.INFO, "Expected Image clickable :- " + ExpectedImageEnable);
+						testCase.log(Status.PASS, "Image Not clickable");
+					} catch (AssertionError e) {
+						testCase.log(Status.INFO, "Actual Image clickable :- " + ActualImageEnable);
+						testCase.log(Status.INFO, "Expected Image clickable :- " + ExpectedImageEnable);
+						testCase.log(Status.FAIL, "Image clickable");
+			        }
+			        
 		}
 		else {
 			testCase = extent.createTest("IMAGE DISPLAYED");
@@ -162,6 +191,8 @@ public void Image() throws InterruptedException {
 		testCase.log(Status.INFO, "Dont Have Image Locator");
 		testCase.log(Status.FAIL, " Dont Have Image Locator");
 	}
+
+	
 }
 	 
 }

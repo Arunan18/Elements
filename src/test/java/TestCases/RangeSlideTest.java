@@ -28,7 +28,7 @@ RangeSlidePage loginnew = new RangeSlidePage();
 			Thread.sleep(3000);
 			
 			RangeSlidePage.closebutton.click();
-			Thread.sleep(3000);
+			Thread.sleep(3000); 
 			
 			RangeSlidePage.mobiles.click();
 			

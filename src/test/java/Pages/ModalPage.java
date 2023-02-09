@@ -20,6 +20,8 @@ public class ModalPage {
 	
 	@FindBy (xpath = "/html/body/div[3]/div/div[2]/div/div[2]/div[3]/div/button[1]")
 	public static WebElement modalclose;
+	@FindBy (id="plant_address")
+	public static WebElement PlanAddress;
 	
 	
 }

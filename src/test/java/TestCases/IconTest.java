@@ -212,6 +212,35 @@ public class IconTest extends DriverInitialization{
 	            testCase.log(Status.FAIL, " background color wrong");
 	        }
 		
+	        //Fill color
+	        String fillColor = IconPage.IMG.getCssValue("fill");
+	        String ActualFillColor = Color.fromString(fillColor).asHex();
+	        String ExpectedFillColor="#000000";
+	        testCase = extent.createTest("ICON FILL COLOR");
+	        try {
+				Assert.assertEquals(ActualFillColor, ExpectedFillColor);
+				testCase.log(Status.INFO, "Actual Fill color :- " + ActualFillColor);
+	            testCase.log(Status.INFO, "Expected Fill color :- " + ExpectedFillColor);
+	            testCase.log(Status.PASS, " Fill color Correct ");
+	        } catch (AssertionError e) {
+	            testCase.log(Status.INFO, "Actual Fill color :- " + ActualFillColor);
+	            testCase.log(Status.INFO, "Expected Fill color :- " + ExpectedFillColor);    
+	            testCase.log(Status.FAIL, " Fill color wrong");
+			}
+//	        Icon Image
+	        String ActualImageUrl = IconPage.IMG.getAttribute("xlink:href");
+	        String ExpectedImageUrl="null";
+	        testCase = extent.createTest("ICON IMAGE");
+	        try {
+				Assert.assertEquals(ActualImageUrl, ExpectedImageUrl);
+				testCase.log(Status.INFO, "Actual Icon Image :- " + ActualImageUrl);
+	            testCase.log(Status.INFO, "Expected Icon Image :- " + ExpectedImageUrl);
+	            testCase.log(Status.PASS, " Icon Image Correct ");
+	        } catch (AssertionError e) {
+	            testCase.log(Status.INFO, "Actual Icon Image :- " + ActualImageUrl);
+	            testCase.log(Status.INFO, "Expected Icon Image :- " + ExpectedImageUrl);    
+	            testCase.log(Status.FAIL, " Icon Image wrong");
+			}
 //			boolean ActualIconEnable=IconPage.IMG.isEnabled();
 //			boolean ExpectedIconEnable=true;
 //			testCase = extent.createTest("Icon -Enable");
@@ -222,7 +251,7 @@ public class IconTest extends DriverInitialization{
 //			}
 			
 	/*End width & height*/	
-	
+	 
 }	
 }
 

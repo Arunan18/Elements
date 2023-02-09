@@ -234,7 +234,7 @@ public class ToolTest extends DriverInitialization {
 					Home.click();
 			Thread.sleep(2000);
 				
-			}
+			} 
 			else {
 				testCase = extent.createTest("TOOL-TIPS VISIBLE");
 				testCase.log(Status.INFO,"Element not visible");

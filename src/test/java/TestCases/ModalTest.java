@@ -50,7 +50,7 @@ public class ModalTest extends DriverInitialization{
 		}
 		Thread.sleep(2000);
 
-		// ***** element position test
+		// ***** element position test 
 
 		Point ActualLocation = ModalPage.modal.getLocation();
 
@@ -289,12 +289,9 @@ public class ModalTest extends DriverInitialization{
 		
 
 		// identify modal content
-		
 		String ActualmodalContent= ModalPage.modalcontent.getText();
-		System.out.println("Modal Dialog content: " + ActualmodalContent);
-
-		String ExpectedModalContent = " * Code:\r\n" + "* Plant:\r\n" + "Address:\r\n" + "Contact No:\r\n" + "Fax:\r\n"
-				+ "* Sub Business Unit:\r\n" + "Description:";
+		System.out.println( ActualmodalContent);
+		String ExpectedModalContent = "* Code:"+"\n"+"* Plant:"+"\n"+"Address:"+"\n"+"Contact No:"+"\n"+"Fax:"+"\n"+"* Sub Business Unit:"+"\n"+"Description:";
 
 		boolean modalContent = true;
 		testCase = extent.createTest("011-MODAL-CONTENT");
@@ -342,6 +339,22 @@ public class ModalTest extends DriverInitialization{
 			testCase.log(Status.FAIL, "Modal invisible");
 		}
 		Thread.sleep(2000);
+		//TextBox Length
+		ModalPage.PlanAddress.sendKeys("123456789");
+		String text = ModalPage.PlanAddress.getAttribute("value");
+		int ActualtextLength = text.length();
+		int ExpectedtextLength = 9;
+		testCase = extent.createTest("TEXT-BOX-LENGTH");
+		try {
+			Assert.assertEquals(ActualtextLength, ExpectedtextLength);
+			testCase.log(Status.INFO, "Actual Length :- " + ActualtextLength);
+			testCase.log(Status.INFO, "Expected Length :- " + ExpectedtextLength);
+			testCase.log(Status.PASS, "Correct Length  ");
+		} catch (AssertionError e) {
+			testCase.log(Status.INFO, "Actual Length :- " + ActualtextLength);
+			testCase.log(Status.INFO, "Expected Length :- " + ExpectedtextLength);
+			testCase.log(Status.FAIL, "Wrong Length  ");
+		}
 		
 		//  click on outside of modal
 		
