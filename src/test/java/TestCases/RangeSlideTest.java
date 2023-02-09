@@ -28,14 +28,17 @@ RangeSlidePage loginnew = new RangeSlidePage();
 			Thread.sleep(3000);
 			
 			RangeSlidePage.closebutton.click();
-			Thread.sleep(1500);
+			Thread.sleep(3000);
 			
 			RangeSlidePage.mobiles.click();
+			
+			Thread.sleep(3000);
+			RangeSlidePage.rangebanner.click();
 			
 			
 /*Range slider Enabled*/
 			
-			Thread.sleep(1500);
+			Thread.sleep(3000);
 			boolean ExpectedRangeslideEenable = true;
 			boolean ActualRangeslideEenable = RangeSlidePage.rangeslidefull.isEnabled();
 			testCase = extent.createTest("Range slider page Enabled");
@@ -127,7 +130,7 @@ RangeSlidePage loginnew = new RangeSlidePage();
 			System.out.println("y-axis = " + y);
 			
 			
-			Point expectedLocation = new Point(8, 392);
+			Point expectedLocation = new Point(24, 552);
 			testCase = extent.createTest("position");
 			
 			try {
@@ -163,7 +166,7 @@ RangeSlidePage loginnew = new RangeSlidePage();
 //Range slider Cursor
 			try {
 				Thread.sleep(3000);
-				String actualCursorPoint = RangeSlidePage.rangeslide.getCssValue("cursor");
+				String actualCursorPoint = RangeSlidePage.rangeslidefull.getCssValue("cursor");
 				String expectedCursorPoint = "pointer";
 
 				testCase = extent.createTest("Range-Cursor-Pointer");
@@ -188,7 +191,7 @@ RangeSlidePage loginnew = new RangeSlidePage();
 /*Range slider Height Start*/
 			
 			Thread.sleep(3000);
-			Dimension hightsize = RangeSlidePage.rangeslide.getSize();
+			Dimension hightsize = RangeSlidePage.rangeslidefull.getSize();
 			int ActualHeight = hightsize.getHeight();
 			int ExpectedHeight = 13;
 
@@ -207,7 +210,7 @@ RangeSlidePage loginnew = new RangeSlidePage();
 /*Range slider Width Start*/
 			
 			Thread.sleep(2000);
-			Dimension size = RangeSlidePage.rangeslide.getSize();
+			Dimension size = RangeSlidePage.rangeslidefull.getSize();
 			int ActualWidth = size.getWidth();
 			int ExpectedWidth = 174;
 			
@@ -345,29 +348,8 @@ RangeSlidePage loginnew = new RangeSlidePage();
 				dragmin.dragAndDropBy(max, -widthm*2,0);
 				dragmin.build().perform();
 			
-////Tooltip display
-//			RangeSlidePage.minbutton.click();
-//			boolean ActualElement = RangeSlidePage.minbutton.isDisplayed();
-//			boolean ExpectedElement=false;
-//	        
-//			testCase = extent.createTest("Range slider tooltip visible");
-//			try {
-//				Assert.assertEquals(ActualElement,ExpectedElement);
-//				testCase.log(Status.INFO,"ActualElement :- " + ActualElement);
-//				testCase.log(Status.INFO,"ExpectedElement :- " + ExpectedElement);
-//				testCase.log(Status.INFO,"Element Available");
-//				testCase.log(Status.PASS,"visible pass");
-//			} catch (AssertionError e) {
-//				testCase.log(Status.INFO,"ActualElement :- " + ActualElement);
-//				testCase.log(Status.INFO,"ExpectedElement :- " + ExpectedElement);
-//				testCase.log(Status.INFO,"Element not available");
-//				testCase.log(Status.FAIL,"fail");
-//			}
-//			
-//			Thread.sleep(2000);
-			
-			
-	
+
+		
 	}
 
 }

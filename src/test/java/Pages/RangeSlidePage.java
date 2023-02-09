@@ -11,7 +11,10 @@ public class RangeSlidePage {
 	@FindBy(xpath  = "/html/body/div[1]/div/div[2]/div/div/div[2]")
 	public static WebElement mobiles ;
 	
-	@FindBy(xpath  = "/html/body/div[1]/div/div[3]/div[2]/div[1]/div/section[2]")
+	@FindBy(xpath = "/html/body/div[1]/div/div[3]/div[5]/div/div[1]/a/div/img[2]")
+	public static WebElement rangebanner;
+	
+	@FindBy(xpath  = "/html/body/div[1]/div/div[3]/div/div[1]/div/div[1]/div/section[2]/div[3]/div[1]")
 	public static WebElement rangeslidefull ;	
 	
 	@FindBy(xpath  = "//*[@id=\"container\"]/div/div[3]/div[2]/div[1]/div/section[2]/div[3]/div[1]")

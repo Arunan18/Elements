@@ -216,20 +216,21 @@ public class PaginationTest extends DriverInitialization {
 //		****************************************************************************************************************
 		driver.navigate().refresh();
 		Thread.sleep(2000);
-//		PaginationPage.CurrentPaginationOpction.click();
-//		Thread.sleep(2000);
+		PaginationPage.CurrentPaginationOpction.click();
+		Thread.sleep(2000);
 //		PaginationPage.Page_20.click();
 //		PaginationPage.Page_30.click();
-//		PaginationPage.Page_100.click();
-//		Thread.sleep(2000); 
-		int ActualTotalPage = 0;
+		PaginationPage.Page_100.click();
+		Thread.sleep(2000); 
+		int ActualTotalPage = 1;
 		boolean Enablity = PaginationPage.NextPageBtn.isEnabled();
 		while (Enablity) {
-			Enablity = PaginationPage.NextPageBtn.isEnabled();
 			Thread.sleep(1000);
 			PaginationPage.NextPageBtn.click();
 			ActualTotalPage = ActualTotalPage + 1;
+			Enablity = PaginationPage.NextPageBtn.isEnabled();
 		}
+		System.out.println(ActualTotalPage);
 		Thread.sleep(2000);
 //		Total Page 10/Page 
 		if (PaginationPage.CurrentPaginationOpction.getText().contentEquals("10 / page")) {
@@ -673,11 +674,11 @@ driver.navigate().refresh();
 //		String AfterPage = "']/a";
 //*******************************************************************************************************************************
 		driver.navigate().refresh();
-//		PaginationPage.CurrentPaginationOpction.click();
-//		Thread.sleep(2000);
+		PaginationPage.CurrentPaginationOpction.click();
+		Thread.sleep(2000);
 //		PaginationPage.Page_20.click();
 //		PaginationPage.Page_30.click();
-//		PaginationPage.Page_100.click();
+		PaginationPage.Page_100.click();
 		Thread.sleep(2000);
 		int ActualTotalData = 0;
 		for (int j = 1; j <= ActualTotalPage; j++) {
@@ -705,15 +706,15 @@ driver.navigate().refresh();
 		
 //		*************************************************************************************************************************
 		driver.navigate().refresh();
-//		Thread.sleep(2000);
-//		PaginationPage.CurrentPaginationOpction.click();
+		Thread.sleep(2000);
+		PaginationPage.CurrentPaginationOpction.click();
 		Thread.sleep(3000);
 //		PaginationPage.Page_20.click();
 //		Thread.sleep(2000);
 //		PaginationPage.Page_30.click();
 //		Thread.sleep(2000);
-//		PaginationPage.Page_100.click();
-//		Thread.sleep(2000); 
+		PaginationPage.Page_100.click();
+		Thread.sleep(2000); 
 //		System.out.println("****"+PaginationPage.CurrentPaginationOpction.getText());
 //		Total Count of the 10/page index
 		if (PaginationPage.CurrentPaginationOpction.getText().contentEquals("10 / page")) {

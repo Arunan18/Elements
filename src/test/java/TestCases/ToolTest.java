@@ -104,7 +104,7 @@ public class ToolTest extends DriverInitialization {
 				}
 				Thread.sleep(2000);
 //				text spelling before click
-				String ActualTextBefore = ToolPage.ToolTips.getText();
+				String ActualTextBefore = ToolPage.ToolTips.getText(); 
 				String ExpectedTextBefore = "Turn on Due Day";
 				testCase = extent.createTest("TOOL-TIPS TEXT SPELLING BEFORE CLICK");
 				try {
