@@ -4,10 +4,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class RadioButtonsPage {
-@FindBy(xpath = "//a[@class='sc-bdVaJa ieeiNp'][@href=\"#/trialcards\"]")
+@FindBy(xpath = "//a[@class='sc-bdVaJa ieeiNp'][@href='#/trialcards']")
 public static WebElement TESTSCALIBRATIONS;
 
-@FindBy(xpath = "//a[@class='sc-bdVaJa ieeiNp'][@href=\"#/equipmentcalibration\"]")
+@FindBy(xpath = "//a[@class='sc-bdVaJa ieeiNp'][@href='#/equipmentcalibration']")
 public static WebElement EquipmentCalibration;
 
 @FindBy(xpath = "//button[@type='button'][@class='ant-btn sc-gZMcBi dMdnOw']")

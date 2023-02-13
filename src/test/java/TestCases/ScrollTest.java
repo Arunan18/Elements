@@ -20,10 +20,10 @@ public class ScrollTest extends DriverInitialization {
 	   public void mainn() throws IOException, InterruptedException {
 		   PageFactory.initElements(driver, scroll);
 		   Thread.sleep(1500);
-		   ScrollPage.username.sendKeys("admin");
-		   ScrollPage.password.sendKeys("tokyo@admin");
-		   ScrollPage.login.click();
-			Thread.sleep(3000);
+//		   ScrollPage.username.sendKeys("admin");
+//		   ScrollPage.password.sendKeys("tokyo@admin");
+//		   ScrollPage.login.click();
+//			Thread.sleep(3000);
 		
 			ScrollPage.testResult.click();
 			

@@ -11,6 +11,8 @@
 			<class name="TestCases.ForgotLinkTest" />
 			<class name="TestCases.LoginTest" />
 			<class name="TestCases.MasterTest" />
+			<class name="TestCases.BatchTest" />
+			<class name="TestCases.IconTest" />
 			<class name="TestCases.MenuTest"/>
 			<class name="TestCases.TabTest" />
 			<class name="TestCases.TextTest" />
@@ -19,13 +21,13 @@
 			<class name="TestCases.MandatoryFieldTest" />
 			<class name="TestCases.MaterialTest" />
 			<class name="TestCases.Dropdown" />
-			<class name="TestCases.IconTest" />
 			<class name="TestCases.UnitTest1" />
 			<class name="TestCases.PaginationTest" />
 			<class name="TestCases.HomeTest" />
 			<class name="TestCases.Check_boxtest" />
 			<class name="TestCases.TogglebuttonTest" />
 			<class name="TestCases.ToolTest" />
+			<class name="TestCases.PlaceholderTest" />
 			<class name="TestCases.RadioButtonsTest" />
 			<class name="TestCases.ScrollTest" />
 			

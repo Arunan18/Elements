@@ -4,8 +4,18 @@
 	<test thread-count="5" name="Test">
 
 		<classes>
+		<class name="TestCases.LoginTest" />
+		<class name="TestCases.MasterTest" />
+		<class name="TestCases.MaterialTest"/> 
+		<class name="TestCases.Dropdown" />
+		
+			
+			<!--
+			<class name="TestCases.ImageTest" />
 			<class name="TestCases.LoginTest" />
-			<class name="TestCases.PaginationTest" />
+			<class name="TestCases.MasterTest" />
+			<class name="TestCases.IconTest" />
+			 <class name="TestCases.PaginationTest" /> -->
 			
 
 			<!-- <class name="TestCases.AdminTest"/> 

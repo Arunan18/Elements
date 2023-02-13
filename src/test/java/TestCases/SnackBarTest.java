@@ -30,7 +30,7 @@ SnackBarPage snackpg = new SnackBarPage();
 //	SnackBarPage.homebtn.click();
 //	SnackBarPage.mastercard.click();
 //	Thread.sleep(2000);
-	SnackBarPage.plantheader.click();
+//	SnackBarPage.plantheader.click();
 	SnackBarPage.sbubtnsite.click();
 	SnackBarPage.addsbubtn.click();
 	Thread.sleep(2000);
@@ -39,7 +39,7 @@ SnackBarPage snackpg = new SnackBarPage();
 	SnackBarPage.savebtn.click();
 	Thread.sleep(2000);
 	SnackBarPage.addedsuggessmsg.click();
-	
+	Thread.sleep(4000);
 		
 	
 	// Snackbar Visible - Displayed

@@ -65,7 +65,7 @@ public class MandatoryFieldTest extends DriverInitialization{
 		// Test title name
 		try {
 			String value = driver
-					.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div[2]/form/div[1]/div/div/label"))
+					.findElement(By.xpath("//form[@class='ant-legacy-form ant-legacy-form-horizontal sc-gqjmRU brqWbd']/div[1]/div/div/label"))
 					.getText();
 			Thread.sleep(2000);
 
@@ -77,7 +77,7 @@ public class MandatoryFieldTest extends DriverInitialization{
 ////-----------------------------------------------------------------------------------------------
 		// Test Placeholder Name
 		try {
-			String value = driver.findElement(By.xpath("//*[@id=\"equipment_name\"]")).getAttribute("placeholder");
+			String value = driver.findElement(By.id("equipment_name")).getAttribute("placeholder");
 
 			TestCasePrint("TEST PLACEHOLDER NAME", "Enter Equipment Name", value);
 		} catch (Exception e) {
@@ -87,7 +87,7 @@ public class MandatoryFieldTest extends DriverInitialization{
 ////-----------------------------------------------------------------------------------------------
 		// test Enabled
 		try {
-			boolean value = driver.findElement(By.xpath("//*[@id=\"equipment_name\"]")).isEnabled();
+			boolean value = driver.findElement(By.id("equipment_name")).isEnabled();
 
 			TestCasePrint("TEST ENABLE", "true", String.valueOf(value));
 		} catch (Exception e) {
@@ -98,7 +98,7 @@ public class MandatoryFieldTest extends DriverInitialization{
 ////-----------------------------------------------------------------------------------------------
 		// test Visibility
 		try {
-			boolean value = driver.findElement(By.xpath("//*[@id=\"equipment_name\"]")).isDisplayed();
+			boolean value = driver.findElement(By.id("equipment_name")).isDisplayed();
 
 			TestCasePrint("TEST DISPLAYED", "true", String.valueOf(value));
 		} catch (Exception e) {
@@ -108,7 +108,7 @@ public class MandatoryFieldTest extends DriverInitialization{
 
 		// test Position
 		try {
-			String value = driver.findElement(By.xpath("//*[@id=\"equipment_name\"]")).getLocation().toString();
+			String value = driver.findElement(By.id("equipment_name")).getLocation().toString();
 			System.out.println("TEST POSITION" + value);
 			TestCasePrint("TEST POSITION", "(527, 189)", String.valueOf(value));
 		} catch (Exception e) {
@@ -118,7 +118,7 @@ public class MandatoryFieldTest extends DriverInitialization{
 
 		// test width
 		try {
-			int value = driver.findElement(By.xpath("//*[@id=\"equipment_name\"]")).getSize().getWidth();
+			int value = driver.findElement(By.id("equipment_name")).getSize().getWidth();
 			System.out.println("TEST WIDTH" + value);
 			TestCasePrint("TEST WIDTH", String.valueOf(312), String.valueOf(value));
 		} catch (Exception e) {
@@ -128,7 +128,7 @@ public class MandatoryFieldTest extends DriverInitialization{
 
 		// test BG COLOR
 		try {
-			String value = driver.findElement(By.xpath("//*[@id=\"equipment_name\"]")).getCssValue("background-color").toString();
+			String value = driver.findElement(By.id("equipment_name")).getCssValue("background-color").toString();
 			System.out.println("TEST BG COLOR" + value);
 			TestCasePrint("TEST BG COLOR", "rgba(255, 255, 255, 1)", String.valueOf(value));
 		} catch (Exception e) {
@@ -138,7 +138,7 @@ public class MandatoryFieldTest extends DriverInitialization{
 		
 		// test FONT COLOR
 		try {
-			String value = driver.findElement(By.xpath("//*[@id=\"equipment_name\"]")).getCssValue("color").toString();
+			String value = driver.findElement(By.id("equipment_name")).getCssValue("color").toString();
 			System.out.println("TEST FONT COLOR" + value);
 			TestCasePrint("TEST FONT COLOR", "rgba(0, 0, 0, 0.85)", String.valueOf(value));
 		} catch (Exception e) {
@@ -152,12 +152,12 @@ public class MandatoryFieldTest extends DriverInitialization{
 		// Test space Value Validation
 
 //		try {
-//			driver.findElement(By.xpath("//*[@id=\"equipment_name\"]")).sendKeys("     ");
+//			driver.findElement(By.id("equipment_name")).sendKeys("     ");
 //			Thread.sleep(2000);
 //
 //			// Validation message
 //			String validMsg = driver
-//					.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div[2]/form/div[1]/div")).getText();
+//					.findElement(By.xpath("//form[@class='ant-legacy-form ant-legacy-form-horizontal sc-gqjmRU brqWbd']/div[1]/div")).getText();
 //			Thread.sleep(2000);
 //
 //			// Print check
@@ -175,7 +175,7 @@ public class MandatoryFieldTest extends DriverInitialization{
 //		}
 
 //		Click Cancel
-		driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div[3]/button[1]")).click();
+		driver.findElement(By.xpath("//button[@type='button'][@class='ant-btn']")).click();
 
 //		Thread.sleep(3000);
 		
@@ -212,12 +212,12 @@ public class MandatoryFieldTest extends DriverInitialization{
 		// Test space Value Validation
 
 		try {
-			driver.findElement(By.xpath("//*[@id=\"equipment_name\"]")).sendKeys("     ");
+			driver.findElement(By.id("equipment_name")).sendKeys("     ");
 			Thread.sleep(2000);
 
 			// Validation message
 			String validMsg = driver
-					.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div[2]/form/div[1]/div")).getText();
+					.findElement(By.xpath("//form[@class='ant-legacy-form ant-legacy-form-horizontal sc-gqjmRU brqWbd']/div[1]/div")).getText();
 			Thread.sleep(2000);
 
 			// Print check
@@ -229,7 +229,7 @@ public class MandatoryFieldTest extends DriverInitialization{
 
 			TestCasePrint("TEST SPACE VALIDATION", "Equipment Name allow only letters & Number",
 					String.valueOf(validMsg));
-			driver.findElement(By.xpath("//*[@id=\"equipment_name\"]")).clear();
+			driver.findElement(By.id("equipment_name")).clear();
 		} catch (Exception e) {
 			TestCasePrint("TEST SPACE VALIDATION", "Equipment Name allow only letters & Number", String.valueOf(e));
 
@@ -238,7 +238,7 @@ public class MandatoryFieldTest extends DriverInitialization{
 ////---------------------------------------------------------------------------------------------
 
 //		Click Cancel
-		driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div[3]/button[1]")).click();
+		driver.findElement(By.xpath("//div[@class='ant-modal-footer']/button[1]")).click();
 
 	}
 
@@ -259,12 +259,12 @@ public class MandatoryFieldTest extends DriverInitialization{
 
 		//// MIMIMUM CHARECTORS Validation
 		try {
-			driver.findElement(By.xpath("//*[@id=\"equipment_name\"]")).sendKeys("eq");
+			driver.findElement(By.id("equipment_name")).sendKeys("eq");
 			Thread.sleep(2000);
 
 			// Validation message
 			String validMsg = driver
-					.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div[2]/form/div[1]/div")).getText();
+					.findElement(By.xpath("//form[@class='ant-legacy-form ant-legacy-form-horizontal sc-gqjmRU brqWbd']/div[1]/div")).getText();
 			Thread.sleep(2000);
 
 			boolean testvalidation = validMsg.contains("At least 3 characters long!");
@@ -281,7 +281,7 @@ public class MandatoryFieldTest extends DriverInitialization{
 		}
 ////----------------------------------------------------------------------------------------------
 //		Click Cancel
-		driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div[3]/button[1]")).click();
+		driver.findElement(By.xpath("//div[@class='ant-modal-footer']/button[1]")).click();
 
 	}
 
@@ -300,13 +300,13 @@ public class MandatoryFieldTest extends DriverInitialization{
 
 ////---------------------------------------------------------------------------------------------
 		try {
-			driver.findElement(By.xpath("//*[@id=\"equipment_name\"]")).sendKeys("eq");
-			driver.findElement(By.xpath("//*[@id=\"equipment_name\"]")).sendKeys(Keys.BACK_SPACE);
-			driver.findElement(By.xpath("//*[@id=\"equipment_name\"]")).sendKeys(Keys.BACK_SPACE);
+			driver.findElement(By.id("equipment_name")).sendKeys("eq");
+			driver.findElement(By.id("equipment_name")).sendKeys(Keys.BACK_SPACE);
+			driver.findElement(By.id("equipment_name")).sendKeys(Keys.BACK_SPACE);
 			Thread.sleep(2000);
 
 			String validMsg = driver
-					.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div[2]/form/div[1]/div")).getText();
+					.findElement(By.xpath("//form[@class='ant-legacy-form ant-legacy-form-horizontal sc-gqjmRU brqWbd']/div[1]/div")).getText();
 			Thread.sleep(2000);
 
 			boolean testvalidation = validMsg.contains("Name can't be empty");
@@ -323,7 +323,7 @@ public class MandatoryFieldTest extends DriverInitialization{
 
 ////----------------------------------------------------------------------------------------------
 //		Click Cancel
-		driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div[3]/button[1]")).click();
+		driver.findElement(By.xpath("//div[@class='ant-modal-footer']/button[1]")).click();
 
 	}
 
@@ -342,11 +342,11 @@ public class MandatoryFieldTest extends DriverInitialization{
 
 ////---------------------------------------------------------------------------------------------
 		try {
-			driver.findElement(By.xpath("//*[@id=\"equipment_name\"]")).sendKeys("123");
+			driver.findElement(By.id("equipment_name")).sendKeys("123");
 			Thread.sleep(2000);
 
 			String validMsg = driver
-					.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div[2]/form/div[1]/div")).getText();
+					.findElement(By.xpath("//form[@class='ant-legacy-form ant-legacy-form-horizontal sc-gqjmRU brqWbd']/div[1]/div")).getText();
 			Thread.sleep(2000);
 
 			boolean testvalidation = validMsg.contains("Invalid Characters");
@@ -363,7 +363,7 @@ public class MandatoryFieldTest extends DriverInitialization{
 
 ////----------------------------------------------------------------------------------------------
 //		Click Cancel
-		driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div[3]/button[1]")).click();
+		driver.findElement(By.xpath("//div[@class='ant-modal-footer']/button[1]")).click();
 
 	}
 
@@ -382,11 +382,11 @@ public class MandatoryFieldTest extends DriverInitialization{
 
 ////---------------------------------------------------------------------------------------------
 		try {
-			driver.findElement(By.xpath("//*[@id=\"equipment_name\"]")).sendKeys("@@@");
+			driver.findElement(By.id("equipment_name")).sendKeys("@@@");
 			Thread.sleep(2000);
 
 			String validMsg = driver
-					.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div[2]/form/div[1]/div")).getText();
+					.findElement(By.xpath("//form[@class='ant-legacy-form ant-legacy-form-horizontal sc-gqjmRU brqWbd']/div[1]/div")).getText();
 			Thread.sleep(2000);
 
 			boolean testvalidation = validMsg.contains("Equipment Name allow only letters & Number");
@@ -405,7 +405,7 @@ public class MandatoryFieldTest extends DriverInitialization{
 
 ////----------------------------------------------------------------------------------------------
 //		Click Cancel
-		driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div[3]/button[1]")).click();
+		driver.findElement(By.xpath("//div[@class='ant-modal-footer']/button[1]")).click();
 
 	}
 
@@ -418,16 +418,16 @@ public class MandatoryFieldTest extends DriverInitialization{
 					.click();
 			Thread.sleep(2000);
 
-			driver.findElement(By.xpath("//*[@id=\"equipment_description\"]")).sendKeys("Sample Comment");
+			driver.findElement(By.id("equipment_description")).sendKeys("Sample Comment");
 			Thread.sleep(2000);
 
 //			Click EQ type button
-			driver.findElement(By.xpath("//*[@id=\"type\"]")).click();
+			driver.findElement(By.id("type")).click();
 			Thread.sleep(2000);
 
 //			Select EQ type
 			driver.findElement(By
-					.xpath("//div[@class='ant-select-item-option-content'][normalize-space()='PRODUCTION_EQUIPMENT']"))
+					.xpath("//body[@class='ant-scrolling-effect']/div[5]/div/div/div/div[2]/div[1]/div/div/div[2]/div"))
 					.click();
 			Thread.sleep(2000);
 
@@ -438,14 +438,14 @@ public class MandatoryFieldTest extends DriverInitialization{
 ////---------------------------------------------------------------------------------------------
 //	test space Save
 		try {
-			driver.findElement(By.xpath("//*[@id=\"equipment_name\"]")).sendKeys(inputValue);
+			driver.findElement(By.id("equipment_name")).sendKeys(inputValue);
 			Thread.sleep(2000);
 
-			driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div[3]/button[2]")).click();
+			driver.findElement(By.xpath("//div[@class='ant-modal-footer']/button[2]")).click();
 			Thread.sleep(2000);
 
 			boolean saveButtonPresent = driver
-					.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div[3]/button[2]")).isDisplayed();
+					.findElement(By.xpath("//div[@class='ant-modal-footer']/button[2]")).isDisplayed();
 
 			TestCasePrint(NegativeTestCaseName, "true", String.valueOf(saveButtonPresent));
 
@@ -456,7 +456,7 @@ public class MandatoryFieldTest extends DriverInitialization{
 
 ////----------------------------------------------------------------------------------------------
 //		Click Cancel
-		driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/div[2]/div[3]/button[1]")).click();
+		driver.findElement(By.xpath("//div[@class='ant-modal-footer']/button[1]")).click();
 
 	}
 
@@ -484,5 +484,5 @@ public class MandatoryFieldTest extends DriverInitialization{
 	public static void MinCharSave() throws InterruptedException {
 		TestNegativeSave("TEST MINIMUM CHARECTORS SAVE", "eq");
 	}
-
+ 
 }

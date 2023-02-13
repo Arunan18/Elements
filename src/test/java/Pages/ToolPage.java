@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class ToolPage {
 	
-	@FindBy(xpath = "//a[@class='sc-bdVaJa ieeiNp'][@href=\"#/testcreate\"]")
+	@FindBy(xpath = "//a[@class='sc-bdVaJa ieeiNp'][@href='#/testcreate']")
 	public static WebElement TestConfiguration;
 	
 	@FindBy(xpath = "//div[@class='sc-htoDjs jApeNY']/div[3]/div[1]")

@@ -18,24 +18,24 @@ public class MenuTest extends DriverInitialization{
 		Thread.sleep(4000);
 
 		WebElement adButton = driver
-				.findElement(By.xpath("//*[@id=\"root\"]/div/section/section/header/ul/div/div[2]/div/div"));
+				.findElement(By.xpath("//header[@class='ant-layout-header']/ul/div/div[2]/div/div"));
 		adButton.click();
 
 		Thread.sleep(3000);
 
-		WebElement menu = driver.findElement(By.xpath("/html/body/div[3]/div/div/ul"));
+		WebElement menu = driver.findElement(By.xpath("//ul[@class='ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light']"));
 
 		Thread.sleep(2000);
 
-		WebElement notification = driver.findElement(By.xpath("/html/body/div[3]/div/div/ul/li[3]/span/a/p"));
+		WebElement notification = driver.findElement(By.xpath("//ul[@class='ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light']/li[3]/span/a[@href='#/notification/all']"));
 
 		Thread.sleep(2000);
 
-		WebElement settings = driver.findElement(By.xpath("/html/body/div[3]/div/div/ul/li[4]/span/a"));
+		WebElement settings = driver.findElement(By.xpath("//ul[@class='ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light']/li[4]/span/a[@href='#/settings/emailpoint']"));
 
 		Thread.sleep(2000);
 
-		WebElement logout = driver.findElement(By.xpath("/html/body/div[3]/div/div/ul/li[5]/span/p"));
+		WebElement logout = driver.findElement(By.xpath("//ul[@class='ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light']/li[5]/span/p"));
 
 		Thread.sleep(2000);
 
@@ -494,11 +494,11 @@ public class MenuTest extends DriverInitialization{
 		// ****settings
 
 //			Thread.sleep(3000);
-//	        driver.findElement(By.xpath("//ul[@role='menu']//div[@class='ant-col ant-col-18']//div[2]")).click();
+//	        driver.findElement(By.xpath("//ul[@class='ant-menu-overflow ant-menu ant-menu-root ant-menu-horizontal ant-menu-dark']/div/div[2]/div/div/span")).click();
 
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("/html/body/div[3]/div/div/ul/li[4]/span")).click();
-//	        driver.findElement(By.xpath("/html/body/div[3]/div/div/ul/li[3]/span")).click(); 
+		driver.findElement(By.xpath("//ul[@class='ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light']/li[4]/span/a[@href='#/settings/emailpoint']")).click();
+//	        driver.findElement(By.xpath("//ul[@class='ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light']/li[3]/span/a[@href='#/notification/all']")).click(); 
 
 		String actualsettingnurl = driver.getCurrentUrl();
 		System.out.println(actualsettingnurl);
@@ -529,10 +529,10 @@ public class MenuTest extends DriverInitialization{
 		// ****notification
 
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//ul[@role='menu']//div[@class='ant-col ant-col-18']//div[2]")).click();
+		driver.findElement(By.xpath("//ul[@class='ant-menu-overflow ant-menu ant-menu-root ant-menu-horizontal ant-menu-dark']/div/div[2]/div/div/span")).click();
 
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("/html/body/div[3]/div/div/ul/li[3]/span")).click();
+		driver.findElement(By.xpath("//ul[@class='ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light']/li[3]/span/a[@href='#/notification/all']")).click();
 
 		String actualnotificationnurl = driver.getCurrentUrl();
 		System.out.println(actualnotificationnurl);
@@ -563,10 +563,10 @@ public class MenuTest extends DriverInitialization{
 		// ****notification
 
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//ul[@role='menu']//div[@class='ant-col ant-col-18']//div[2]")).click();
+		driver.findElement(By.xpath("//ul[@class='ant-menu-overflow ant-menu ant-menu-root ant-menu-horizontal ant-menu-dark']/div/div[2]/div/div/span")).click();
 
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("/html/body/div[3]/div/div/ul/li[5]/span")).click();
+		driver.findElement(By.xpath("//ul[@class='ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light']/li[5]/span/p")).click();
 
 		String actuallogouturl = driver.getCurrentUrl();
 		System.out.println(actuallogouturl);

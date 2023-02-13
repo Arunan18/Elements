@@ -549,7 +549,7 @@ public class PaginationTest extends DriverInitialization {
 		
 //		Page Number FontColor before selecting
 		PaginationPage.NextPageBtn.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 String af = PaginationPage.PageNumber.getCssValue("color");
 String ActualFontColorPage1 = Color.fromString(af).asHex();
 String ExpectedFontColorPage1 = "#000000";

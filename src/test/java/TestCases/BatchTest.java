@@ -28,7 +28,7 @@ public class BatchTest extends DriverInitialization{
 //		
 //		Thread.sleep(3000);
 //		BatchPage.loginButton.click();
-
+driver.navigate().refresh();
 		Thread.sleep(5000);
 		BatchPage.Batch.click();
 

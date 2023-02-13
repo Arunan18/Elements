@@ -14,7 +14,7 @@ import com.aventstack.extentreports.Status;
 import Base.DriverInitialization;
 import Pages.RadioButtonsPage;
 import Pages.UnitPage;
-
+ 
 public class RadioButtonsTest extends DriverInitialization{
 RadioButtonsPage rbp= new RadioButtonsPage();
 	@Test
@@ -510,7 +510,7 @@ RadioButtonsPage rbp= new RadioButtonsPage();
             testCase.log(Status.FAIL, " background color wrong");
         }
 		RadioButtonsPage.Cancel.click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		
 		driver.findElement(By.xpath("//a[@class='sc-bdVaJa ieeiNp'][@href='#/']")).click();
 		Thread.sleep(1000);

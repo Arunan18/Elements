@@ -1,6 +1,8 @@
 package TestCases;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Point;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -184,8 +186,12 @@ Placeholderpage placepg = new Placeholderpage();
 						testCase.log(Status.FAIL,"Font-size Wrong");
 					}
 						Thread.sleep(2000);	
-			
-					
+						WebElement Cancel= driver.findElement(By.xpath("//button[@type='button'][@class='ant-btn']"));
+						Cancel.click();
+						Thread.sleep(2000);
+						WebElement Home= driver.findElement(By.xpath("//a[@class='sc-bdVaJa ieeiNp'][@href='#/']"));
+						Home.click();
+				Thread.sleep(2000); 
 					
 }
 

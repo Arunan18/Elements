@@ -13,7 +13,7 @@ public class ScrollPage {
 	
 	@FindBy(xpath = "//button[@type]")
 	public static WebElement login;
-	@FindBy(xpath = "//*[@id=\"root\"]/div/section/section/main/div/div/div/div[6]/a/div/div")
+	@FindBy(xpath = "//a[@class='sc-bdVaJa ieeiNp'][@href='#/testreport']")
 	public static WebElement testResult;
 	//*[@id="root"]/div/section/section/main
 	//*[@id="root"]/div/section/section/main/div/div/div/div[6]/a/div/div

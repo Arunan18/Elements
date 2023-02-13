@@ -45,7 +45,7 @@ public class SnackBarPage {
 	@FindBy(xpath = "//*[@id=\"rcDialogTitle1\"]/div/span/svg")
 	public static WebElement closeicon;
 	
-	@FindBy(xpath = "/html/body/div[2]/div/div/div/div/div/div[1]")
+	@FindBy(xpath = "//div[@class='ant-notification-notice-message']")
 				public static WebElement addedsuggessmsg;		
 			
 }

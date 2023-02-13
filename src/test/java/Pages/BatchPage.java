@@ -14,13 +14,13 @@ public class BatchPage {
 //	public static WebElement loginButton;
 	
 	
-	@FindBy(xpath ="//*[@id=\"root\"]/div/section/section/header/ul/div/div[1]/a/span/sup")
+	@FindBy(xpath ="//*[@class='ant-layout-header']/ul/div/div[1]/a/span/sup")
     public static WebElement Batch;
 	
-	@FindBy(xpath ="//*[@id=\\\"root\\\"]/div/section/section/header/ul/div/div[1]/a/span/span")
+	@FindBy(xpath ="//*[@class='ant-layout-header']/ul/div/div[1]/a/span/span")
     public static WebElement Notification;
 	 
-	@FindBy(xpath ="/html/body/div[2]/div/div/ul/div[2]/li[1]/span/div")
+	@FindBy(xpath ="//li[@class='ant-dropdown-menu-item ant-dropdown-menu-item-active ant-dropdown-menu-item-only-child']/span[1]")
     public static WebElement FirstNotification;
 	
 }

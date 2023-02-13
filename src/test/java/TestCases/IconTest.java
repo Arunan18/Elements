@@ -229,7 +229,7 @@ public class IconTest extends DriverInitialization{
 			}
 //	        Icon Image
 	        String ActualImageUrl = IconPage.IMG.getAttribute("xlink:href");
-	        String ExpectedImageUrl="null";
+	        String ExpectedImageUrl=null;
 	        testCase = extent.createTest("ICON IMAGE");
 	        try {
 				Assert.assertEquals(ActualImageUrl, ExpectedImageUrl);

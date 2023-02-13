@@ -87,7 +87,7 @@ public class TabTest extends DriverInitialization{
 		} catch (Exception e) {
 			TestCasePrint("TAB - TEST SIZE", "(72, 17)", String.valueOf(e));
 		}
-
+Thread.sleep(1000);
 // Font-size
 		try {
 			String value = driver.findElement(By.xpath("/html/body/div[1]/div/section/section/header/ul/li[1]/span/a"))
@@ -149,7 +149,7 @@ public class TabTest extends DriverInitialization{
 		} catch (Exception e) {
 			TestCasePrint("TAB - TEST FONT STYLE", "normal", String.valueOf(e));
 		}
-
+Thread.sleep(1000);
 // Font Color
 		try {
 

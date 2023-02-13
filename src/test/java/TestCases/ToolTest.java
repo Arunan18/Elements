@@ -27,10 +27,10 @@ public class ToolTest extends DriverInitialization {
 
 		
 		Thread.sleep(2000);
-		ToolPage.TestConfiguration.click();
-		Thread.sleep(2000);
-		ToolPage.ConfigureTest.click();
-		Thread.sleep(2000);
+//		ToolPage.TestConfiguration.click();
+//		Thread.sleep(2000);
+//		ToolPage.ConfigureTest.click();
+//		Thread.sleep(2000);
 		Actions actions = new Actions(driver);
 		Thread.sleep(2000);
 		// Locate the element
@@ -230,9 +230,7 @@ public class ToolTest extends DriverInitialization {
 					} 
 					Thread.sleep(2000);
 					
-					WebElement Home= driver.findElement(By.xpath("//a[@class='sc-bdVaJa ieeiNp'][@href='#/']"));
-					Home.click();
-			Thread.sleep(2000);
+					
 				
 			} 
 			else {
@@ -244,5 +242,8 @@ public class ToolTest extends DriverInitialization {
 			testCase.log(Status.INFO,"Element not available"); 
 			testCase.log(Status.FAIL,"Element not available");
 		}
+		WebElement Home= driver.findElement(By.xpath("//a[@class='sc-bdVaJa ieeiNp'][@href='#/']"));
+		Home.click();
+Thread.sleep(2000);
 	}
 }

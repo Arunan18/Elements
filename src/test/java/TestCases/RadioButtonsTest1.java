@@ -26,7 +26,7 @@ public class RadioButtonsTest1 extends DriverInitialization{
 		Thread.sleep(1000);
 		RadioButtonsPage.AddCalibration.click();
 		Thread.sleep(2000); 
-		
+		 
 //		Calibrated Type Heading
 		String ExpectedRadioHeading= "* Calibrated Type:";
 		String ActualRadioHeading = RadioButtonsPage.RadioHeading.getText();

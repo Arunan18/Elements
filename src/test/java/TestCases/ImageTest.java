@@ -8,8 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-
+ 
 import Base.DriverInitialization;
 import Pages.ImagePage;
 import Pages.UnitPage;
@@ -165,21 +166,49 @@ public void Image() throws InterruptedException {
 						testCase.log(Status.INFO, "Expected Filter :- " + ExpectedFilter);
 						testCase.log(Status.FAIL, "Filter is Wrong");
 			        }
-//			        Image clickable
-			        boolean ActualImageEnable = ImagePage.image.isEnabled();
-			        boolean ExpectedImageEnable = false;
-			        testCase = extent.createTest("IMAGE CLICKABLE");
+
+//					loading
+			        String ActualLoading = ImagePage.image.getAttribute("loading");
+			        String ExpectedLoading="auto";
+			        testCase = extent.createTest("IMAGE LOADING");
 			        try {
-			            Assert.assertEquals(ActualImageEnable, ExpectedImageEnable);
-			            testCase.log(Status.INFO, "Actual Image clickable :- " + ActualImageEnable);
-						testCase.log(Status.INFO, "Expected Image clickable :- " + ExpectedImageEnable);
-						testCase.log(Status.PASS, "Image Not clickable");
+			            Assert.assertEquals(ActualLoading, ExpectedLoading);
+			            testCase.log(Status.INFO, "Actual Image Loading :- " + ActualLoading);
+						testCase.log(Status.INFO, "Expected Image Loading :- " + ExpectedLoading);
+						testCase.log(Status.PASS, "Image Loading Type is correct");
 					} catch (AssertionError e) {
-						testCase.log(Status.INFO, "Actual Image clickable :- " + ActualImageEnable);
-						testCase.log(Status.INFO, "Expected Image clickable :- " + ExpectedImageEnable);
-						testCase.log(Status.FAIL, "Image clickable");
+						testCase.log(Status.INFO, "Actual Image Loading :- " + ActualLoading);
+						testCase.log(Status.INFO, "Expected Image Loading :- " + ExpectedLoading);
+						testCase.log(Status.FAIL, "Image Loading type is wrong");
 			        }
+//			        Clickable
+			        boolean Url=false;
+			        String originalURL = driver.getCurrentUrl();
+			        ImagePage.image.click();
+					String updatedURL = driver.getCurrentUrl();
+					try {
+						Assert.assertEquals(originalURL, updatedURL);
+					} catch (AssertionError e) {
+						Url=true; 
+					}
 			        
+					boolean source=false;
+					String originalPageSource = driver.getPageSource();
+					ImagePage.image.click();
+					String updatedPageSource = driver.getPageSource();
+					try {
+						Assert.assertEquals(originalPageSource, updatedPageSource);
+					} catch (AssertionError e) {
+						source=true;
+					}
+					testCase = extent.createTest("IMAGE CLICKABLE");
+					if(Url==false && source==false) {
+						testCase.log(Status.PASS, "Image Not");
+					}else {
+						testCase.log(Status.FAIL, "Image Loading Type is correct");
+					}
+
+				 
 		}
 		else {
 			testCase = extent.createTest("IMAGE DISPLAYED");
